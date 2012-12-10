@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @tipo_demanda.id %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @tipo_demanda.tipo %>
+</p>
+
+
+<%= link_to 'Edit', edit_tipo_demanda_path(@tipo_demanda) %> |
+<%= link_to 'Back', tipo_demandas_path %>

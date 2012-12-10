@@ -1,0 +1,43 @@
+<h1>Listing demandas</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Data</th>
+    <th>Uf</th>
+    <th>Solicitante</th>
+    <th>Departamento</th>
+    <th>Resposta</th>
+    <th>Carga horaria</th>
+    <th>Caminho foto</th>
+    <th>Caminho pdf</th>
+    <th>Consultado</th>
+    <th>Contato</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @demandas.each do |demanda| %>
+  <tr>
+    <td><%= demanda.id %></td>
+    <td><%= demanda.data %></td>
+    <td><%= demanda.uf %></td>
+    <td><%= demanda.solicitante %></td>
+    <td><%= demanda.departamento %></td>
+    <td><%= demanda.resposta %></td>
+    <td><%= demanda.carga_horaria %></td>
+    <td><%= demanda.caminho_foto %></td>
+    <td><%= demanda.caminho_pdf %></td>
+    <td><%= demanda.consultado %></td>
+    <td><%= demanda.contato %></td>
+    <td><%= link_to 'Show', demanda %></td>
+    <td><%= link_to 'Edit', edit_demanda_path(demanda) %></td>
+    <td><%= link_to 'Destroy', demanda, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Demanda', new_demanda_path %>

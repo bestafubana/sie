@@ -1,0 +1,69 @@
+<%= form_for(@consultado) do |f| %>
+  <% if @consultado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consultado.errors.count, "error") %> prohibited this consultado from being saved:</h2>
+
+      <ul>
+      <% @consultado.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf %><br />
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :data_nasc %><br />
+    <%= f.datetime_select :data_nasc %>
+  </div>
+  <div class="field">
+    <%= f.label :nome_mae %><br />
+    <%= f.text_field :nome_mae %>
+  </div>
+  <div class="field">
+    <%= f.label :titulo_eleitor %><br />
+    <%= f.text_field :titulo_eleitor %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br />
+    <%= f.text_field :sexo %>
+  </div>
+  <div class="field">
+    <%= f.label :data_obito %><br />
+    <%= f.datetime_select :data_obito %>
+  </div>
+  <div class="field">
+    <%= f.label :unidade_adm %><br />
+    <%= f.text_field :unidade_adm %>
+  </div>
+  <div class="field">
+    <%= f.label :situacao_cadastral %><br />
+    <%= f.text_field :situacao_cadastral %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label :observacoes %><br />
+    <%= f.text_field :observacoes %>
+  </div>
+  <div class="field">
+    <%= f.label :caminho_foto %><br />
+    <%= f.text_field :caminho_foto %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

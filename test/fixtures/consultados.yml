@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  nome: MyString
+  cpf: MyString
+  data_nasc: 2012-12-09 13:59:30
+  nome_mae: MyString
+  titulo_eleitor: MyString
+  sexo: MyString
+  data_obito: 2012-12-09 13:59:30
+  unidade_adm: MyString
+  situacao_cadastral: MyString
+  endereco: MyString
+  observacoes: MyString
+  caminho_foto: MyString
+
+two:
+  id: 
+  nome: MyString
+  cpf: MyString
+  data_nasc: 2012-12-09 13:59:30
+  nome_mae: MyString
+  titulo_eleitor: MyString
+  sexo: MyString
+  data_obito: 2012-12-09 13:59:30
+  unidade_adm: MyString
+  situacao_cadastral: MyString
+  endereco: MyString
+  observacoes: MyString
+  caminho_foto: MyString

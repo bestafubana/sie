@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @consultado.id %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @consultado.nome %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%= @consultado.cpf %>
+</p>
+
+<p>
+  <b>Data nasc:</b>
+  <%= @consultado.data_nasc %>
+</p>
+
+<p>
+  <b>Nome mae:</b>
+  <%= @consultado.nome_mae %>
+</p>
+
+<p>
+  <b>Titulo eleitor:</b>
+  <%= @consultado.titulo_eleitor %>
+</p>
+
+<p>
+  <b>Sexo:</b>
+  <%= @consultado.sexo %>
+</p>
+
+<p>
+  <b>Data obito:</b>
+  <%= @consultado.data_obito %>
+</p>
+
+<p>
+  <b>Unidade adm:</b>
+  <%= @consultado.unidade_adm %>
+</p>
+
+<p>
+  <b>Situacao cadastral:</b>
+  <%= @consultado.situacao_cadastral %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @consultado.endereco %>
+</p>
+
+<p>
+  <b>Observacoes:</b>
+  <%= @consultado.observacoes %>
+</p>
+
+<p>
+  <b>Caminho foto:</b>
+  <%= @consultado.caminho_foto %>
+</p>
+
+
+<%= link_to 'Edit', edit_consultado_path(@consultado) %> |
+<%= link_to 'Back', consultados_path %>

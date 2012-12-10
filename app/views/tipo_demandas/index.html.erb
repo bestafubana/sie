@@ -1,0 +1,25 @@
+<h1>Listing tipo_demandas</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Tipo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tipo_demandas.each do |tipo_demanda| %>
+  <tr>
+    <td><%= tipo_demanda.id %></td>
+    <td><%= tipo_demanda.tipo %></td>
+    <td><%= link_to 'Show', tipo_demanda %></td>
+    <td><%= link_to 'Edit', edit_tipo_demanda_path(tipo_demanda) %></td>
+    <td><%= link_to 'Destroy', tipo_demanda, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tipo demanda', new_tipo_demanda_path %>

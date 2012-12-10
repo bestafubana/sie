@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @demanda.id %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @demanda.data %>
+</p>
+
+<p>
+  <b>Uf:</b>
+  <%= @demanda.uf %>
+</p>
+
+<p>
+  <b>Solicitante:</b>
+  <%= @demanda.solicitante %>
+</p>
+
+<p>
+  <b>Departamento:</b>
+  <%= @demanda.departamento %>
+</p>
+
+<p>
+  <b>Resposta:</b>
+  <%= @demanda.resposta %>
+</p>
+
+<p>
+  <b>Carga horaria:</b>
+  <%= @demanda.carga_horaria %>
+</p>
+
+<p>
+  <b>Caminho foto:</b>
+  <%= @demanda.caminho_foto %>
+</p>
+
+<p>
+  <b>Caminho pdf:</b>
+  <%= @demanda.caminho_pdf %>
+</p>
+
+<p>
+  <b>Consultado:</b>
+  <%= @demanda.consultado %>
+</p>
+
+<p>
+  <b>Contato:</b>
+  <%= @demanda.contato %>
+</p>
+
+
+<%= link_to 'Edit', edit_demanda_path(@demanda) %> |
+<%= link_to 'Back', demandas_path %>
