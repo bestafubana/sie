@@ -1,13 +1,12 @@
 class CreateDemandas < ActiveRecord::Migration
   def change
     create_table :demandas do |t|
-      t.int :id
       t.timestamp :data
       t.string :uf
       t.string :solicitante
       t.string :departamento
       t.string :resposta
-      t.int :carga_horaria
+      t.integer :carga_horaria
       t.string :caminho_foto
       t.string :caminho_pdf
       t.references :consultado

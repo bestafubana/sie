@@ -1,7 +1,6 @@
 class CreateConsultados < ActiveRecord::Migration
   def change
     create_table :consultados do |t|
-      t.int :id
       t.string :nome
       t.string :cpf
       t.timestamp :data_nasc
