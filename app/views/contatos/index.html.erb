@@ -1,8 +1,7 @@
-<h1>Listing contatos</h1>
-
+<h1>Contatos</h1>
+</br>
 <table>
   <tr>
-    <th>Id</th>
     <th>Nome</th>
     <th>Email</th>
     <th>Empresa</th>
@@ -15,19 +14,18 @@
 
 <% @contatos.each do |contato| %>
   <tr>
-    <td><%= contato.id %></td>
     <td><%= contato.nome %></td>
     <td><%= contato.email %></td>
     <td><%= contato.empresa %></td>
     <td><%= contato.departamento %></td>
     <td><%= contato.telefone %></td>
-    <td><%= link_to 'Show', contato %></td>
-    <td><%= link_to 'Edit', edit_contato_path(contato) %></td>
-    <td><%= link_to 'Destroy', contato, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    <td><%= link_to 'Visualizar', contato %></td>
+    <td><%= link_to 'Editar', edit_contato_path(contato) %></td>
+    <td><%= link_to 'Excluir', contato, :method => :delete, :data => { :confirm => 'Você tem certeza que desejar excluir esse contato?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Contato', new_contato_path %>
+<%= link_to 'Novo', new_contato_path %>
