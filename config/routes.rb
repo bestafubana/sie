@@ -1,4 +1,6 @@
 Sie::Application.routes.draw do
+  get "login/login"
+
   resources :demandas
 
 
