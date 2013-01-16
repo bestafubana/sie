@@ -15,4 +15,15 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 config/.DS_Store
+<<<<<<< HEAD
 config/database.yml
+=======
+
+.DS_Store
+
+*.yml
+
+*.yml
+
+*.yml
+>>>>>>> 4e5c515c923f86c4aa6a5b1451aa8d27ebedb911
