@@ -12,18 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
-    <%= f.label :login %><br />
+    <%= f.label :Login %><br />
     <%= f.text_field :login %>
   </div>
+
   <div class="field">
-    <%= f.label :passwd %><br />
-    <%= f.text_field :passwd %>
+    <%= f.label :Senha %><br />
+    <%= f.password_field :passwd %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar"%>
   </div>
 <% end %>

@@ -27,3 +27,23 @@ config/database.yml
 
 *.yml
 >>>>>>> 4e5c515c923f86c4aa6a5b1451aa8d27ebedb911
+
+.idea/.generators
+
+.idea/.name
+
+.idea/.rakeTasks
+
+.idea/encodings.xml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/scopes/scope_settings.xml
+
+.idea/sie.iml
+
+.idea/vcs.xml
+
+.idea/workspace.xml
