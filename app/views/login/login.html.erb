@@ -1,2 +1,25 @@
-<h1>Login#login</h1>
-<p>Find me in app/views/login/login.html.erb</p>
+<% form_tag :action => 'do_login' do %>
+
+<table align="center" class="loginForm">
+	<tr>
+		<td>
+		</td>
+		<td>
+			<input type="text" name="username"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+		<td>
+			<input type="password" name="password" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<%= image_submit_tag "box_avancar.png", :style => 'width:75px;height:25px;' %>
+		</td>
+	</tr>
+<table>
+
+<% end %>
