@@ -1,13 +1,10 @@
 Sie::Application.routes.draw do
-<<<<<<< HEAD
-=======
 
   root :to => 'login#index'
 
   get '/registration' => 'login#registration'
   post '/register' => 'login#register'
   post '/authenticate' => 'login#authenticate'
->>>>>>> Tretas do login
 
   resources :demandas
 
