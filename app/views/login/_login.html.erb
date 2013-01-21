@@ -1,5 +1,5 @@
-<% unless session[:@usuario] %>
-    <%= form_for @usuario, url: { action: :authenticate }, html: { id: 'login_form' } do |f| %>
+<% unless session[:usuario] %>
+    <%= form_for @usuario, :url => { :action => :authenticate }, :html => { id => 'login_form' } do |f| %>
 
         <%= f.label :login %>
         <br />
@@ -7,7 +7,7 @@
         <br />
         <%= f.label :password %>
         <br />
-        <%= f.password_field :password %>
+        <%= f.password_field :passwd %>
         <br />
         <%= f.submit t('.authenticate') %>
     <% end %>
