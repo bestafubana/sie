@@ -1,6 +1,6 @@
 Sie::Application.routes.draw do
 
-  root :to => 'contatos#index'
+  root :to => 'login#index'
 
   get '/registration' => 'login#registration'
   post '/register' => 'login#register'

@@ -23,7 +23,7 @@ class LoginController < ApplicationController
       redirect_to root_path
     else
       flash[:errors] = @usuario.errors.full_messages
-      render :registration
+      render :logout
     end
   end
 

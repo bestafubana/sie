@@ -1,10 +1,12 @@
 class Usuario < ActiveRecord::Base
   attr_accessible :login, :passwd
   
-  #validate :login, presence=true, uniqueness=true
+  validates_presence_of :login
+  validates_uniqueness_of :login
   validates_length_of :login, :maximum => 30
 
-  #validate :passwd, presence=true
+
+  validates_presence_of :passwd
   validates_length_of :passwd, :minimum => 4
   validates_length_of :passwd, :maximum => 30
 
