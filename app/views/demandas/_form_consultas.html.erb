@@ -1,0 +1,45 @@
+<%= form_for(@demanda) do |f| %>
+  <% if @demanda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@demanda.errors.count, "error") %> prohibited this demanda from being saved:</h2>
+
+      <ul>
+      <% @demanda.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.datetime_select :data %>
+  </div>
+   <div class="field">
+      <%= f.label :consultado %><br />
+      <%= f.text_field :consultado %>
+   </div>
+  <div class="field">
+    <%= f.label :uf %><br />
+    <%= f.text_field :uf %>
+  </div>
+  <div class="field">
+    <%= f.label :solicitante %><br />
+    <%= f.text_field :solicitante %>
+  </div>
+  <div class="field">
+    <%= f.label :departamento %><br />
+    <%= f.text_field :departamento %>
+  </div>
+  <div class="field">
+    <%= f.label :resposta %><br />
+    <%= f.text_field :resposta %>
+  </div>
+  <div class="field">
+    <%= f.label :carga_horaria %><br />
+    <%= f.text_field :carga_horaria %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

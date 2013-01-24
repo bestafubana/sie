@@ -1,7 +1,7 @@
 <% if session[:usuario] %>
   <p>
     <%= t('.welcome_user', :login => session[:usuario].login) %> |
-    <%= link_to t('.logout')%>
+    <%= link_to t('.logout'), logout_path, :method => :post %>
   </p>
 <% else %>
   <%= link_to t('.register'), registration_path %>

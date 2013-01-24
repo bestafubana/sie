@@ -1,7 +1,7 @@
 class LoginController < ApplicationController
   def index
 	# render :action => 'login'
-	@usuario = Usuario.new 
+	 @usuario = Usuario.new
   end
 
   def authenticate
