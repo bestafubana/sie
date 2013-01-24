@@ -3,9 +3,6 @@
     <%= t('.welcome_user', :login => session[:usuario].login) %> |
     <%= link_to t('.logout'), logout_path, :method => :post %>
   </p>
-  <script>$("#quadro_login").hide();</script>
-<% else %>
-  <%= link_to t('.register'), registration_path %>
 <% end %>
 
 
