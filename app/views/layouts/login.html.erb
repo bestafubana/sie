@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<% if session[:usuario] %>
 <html>
 <head>
   <title>Sie</title>
@@ -19,13 +18,6 @@
 				<img src="/assets/logo.png" style="padding-top: 22px;">
 			</div>
 			<div id="menu">
-				<ul>
-					<li><a href="#" accesskey="1" title="">Contatos</a></li>
-					<li><a href="#" accesskey="2" title="">Consultas</a></li>
-					<li><a href="#" accesskey="3" title="">Levantamentos</a></li>
-					<li><a href="#" accesskey="4" title="">Flagrantes</a></li>
-					<li class="logout"><%= link_to "SAIR", logout_path, :method => :post %></li>
-				</ul>
 			</div>
 		</div>
 	</div>
@@ -53,8 +45,3 @@
 </div>
 </body>
 </html>
-<% else %>
-    <script>
-        window.location.href="/"  // put your correct path in a string here
-    </script>
-<% end %>

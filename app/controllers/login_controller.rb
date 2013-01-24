@@ -7,6 +7,7 @@ class LoginController < ApplicationController
   def authenticate
     @usuario = Usuario.new(params[:usuario])
     session[:usuario] = @usuario.authenticate
+   # flash[:errors] = errors('home.login.error') unless session[:usuario]
     redirect_to root_path
   end
 

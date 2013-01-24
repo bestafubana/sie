@@ -213,6 +213,23 @@ hr
 	color:#fff;
 }
 
+#menu .logout a
+{
+    background:#E02626;
+    background:-moz-linear-gradient(top, #E02626 0%, #B22020 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #E02626), color-stop(100%, #B22020));
+    background:-webkit-linear-gradient(top, #E02626 0%, #B22020 100%);
+    background:-o-linear-gradient(top, #E02626 0%, #B22020 100%);
+    background:-ms-linear-gradient(top, #E02626 0%, #B22020 100%);
+    background:linear-gradient(top, #E02626 0%, #B22020 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#E02626', endColorstr='#B22020', GradientType=0);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius:4px;
+    border:1px solid #1A87B9;
+    color:#fff;
+}
+
 /* Page */
 
 #page-wrapper
@@ -575,4 +592,13 @@ ul.style3 .first
 	text-decoration: none;
 	text-shadow: 1px 1px 0px #FCE3BB;
 	color: #36332E !important;
+}
+
+#quadro_login {
+    background-color: #3399CC;
+    color:#FFFFFF;
+    padding-left: 15px;
+    padding-top: 15px;
+    height: 152px;
+    width: 240px;
 }
