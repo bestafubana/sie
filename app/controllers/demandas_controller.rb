@@ -32,6 +32,15 @@ class DemandasController < ApplicationController
     end
   end
 
+  def new_consulta
+    @demanda = Demanda.new
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @demandas }
+    end
+  end
+
   # GET /demandas/1/edit
   def edit
     @demanda = Demanda.find(params[:id])

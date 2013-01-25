@@ -7,6 +7,7 @@ Sie::Application.routes.draw do
   post '/register' => 'login#register'
   post '/authenticate' => 'login#authenticate'
   post '/logout' => 'login#logout'
+  get '/new_consulta' => 'demandas#new_consulta'
 
   resources :demandas
 
