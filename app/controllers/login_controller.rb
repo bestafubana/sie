@@ -8,7 +8,7 @@ class LoginController < ApplicationController
     @usuario = Usuario.new(params[:usuario])
     session[:usuario] = @usuario.authenticate
    # flash[:errors] = errors('home.login.error') unless session[:usuario]
-    redirect_to root_path
+    redirect_to '/home'
   end
 
   def registration

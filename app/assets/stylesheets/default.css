@@ -213,7 +213,7 @@ hr
 	color:#fff;
 }
 
-#menu .logout a
+#menu .logout a:hover
 {
     background:#E02626;
     background:-moz-linear-gradient(top, #E02626 0%, #B22020 100%);
@@ -228,6 +228,7 @@ hr
     -webkit-border-radius:4px;
     border:1px solid #1A87B9;
     color:#fff;
+    width: 38px;
 }
 
 /* Page */
