@@ -30,9 +30,9 @@
         <td><%= contato.empresa %></td>
         <td><%= contato.departamento %></td>
         <td><%= contato.telefone %></td>
-        <td><%= link_to 'Visualizar', contato %></td>
-        <td><%= link_to 'Editar', edit_contato_path(contato) %></td>
-        <td><%= link_to 'Excluir', contato, :method => :delete, :data => { :confirm => 'Você tem certeza que desejar excluir esse contato?' } %></td>
+        <td class="visualizar"><img src="assets/open.png" style="vertical-align:middle"> <%= link_to 'Visualizar', contato %></td>
+        <td class="editar"><img src="assets/edit.png" style="vertical-align:middle"><%= link_to 'Editar', edit_contato_path(contato) %></td>
+        <td class="excluir"><img src="assets/delete.png" style="vertical-align:middle"><%= link_to 'Excluir', contato, :method => :delete, :data => { :confirm => 'Você tem certeza que desejar excluir esse contato?' } %></td>
       </tr>
     <% end %>
   </tbody>
