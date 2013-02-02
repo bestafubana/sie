@@ -1,37 +1,44 @@
 <h1>Contatos</h1>
 </br>
-<table id="box-table-a">
-  <tr>
-    <th>Nome</th>
-    <th>Email</th>
-    <th>Empresa</th>
-    <th>Departamento</th>
-    <th>Telefone</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @contatos.each do |contato| %>
-  <tr>
-    <td><%= contato.nome %></td>
-    <td><%= contato.email %></td>
-    <td><%= contato.empresa %></td>
-    <td><%= contato.departamento %></td>
-    <td><%= contato.telefone %></td>
-    <td><%= link_to 'Visualizar', contato %></td>
-    <td><%= link_to 'Editar', edit_contato_path(contato) %></td>
-    <td><%= link_to 'Excluir', contato, :method => :delete, :data => { :confirm => 'Você tem certeza que desejar excluir esse contato?' } %></td>
-  </tr>
-<% end %>
+<script>
+    $(document).ready(function() {
+        $('a[accesskey|="1"]').parent().addClass("current_page_item");
+    });
+</script>
+
+<%= render '/layouts/filtro' %>
+
+<table id="box-table-a" class="advancedtable">
+  <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Empresa</th>
+        <th>Departamento</th>
+        <th>Telefone</th>
+        <th class="noclick"></th>
+        <th class="noclick"></th>
+        <th class="noclick"></th>
+      </tr>
+  </thead>
+  <tbody>
+    <% @contatos.each do |contato| %>
+      <tr>
+        <td><%= contato.nome %></td>
+        <td><%= contato.email %></td>
+        <td><%= contato.empresa %></td>
+        <td><%= contato.departamento %></td>
+        <td><%= contato.telefone %></td>
+        <td><%= link_to 'Visualizar', contato %></td>
+        <td><%= link_to 'Editar', edit_contato_path(contato) %></td>
+        <td><%= link_to 'Excluir', contato, :method => :delete, :data => { :confirm => 'Você tem certeza que desejar excluir esse contato?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />
 
 <%= link_to 'Novo', new_contato_path %>
-<script>
-    $('a[accesskey|="1"]').parent().addClass("current_page_item");
-    $(document).ready(function() {
-        $('#box-table-a').tableFilter();
-    });
-</script>
+
