@@ -18,6 +18,12 @@ class ContatosController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @contato }
+      format.pdf do
+        pdf = ContatoPdf.new(@contato, view_context)
+        send_data pdf.render, :filename =>
+            "contato_#{@contato.created_at.strftime("%d/%m/%Y")}.pdf",
+                  :type => "application/pdf"
+      end
     end
   end
 
@@ -80,4 +86,6 @@ class ContatosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end
