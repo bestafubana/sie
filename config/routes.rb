@@ -12,7 +12,7 @@ Sie::Application.routes.draw do
   resources :demandas
 
 
-  resources :consultados
+  #resources :consultados
 
 
   resources :usuarios

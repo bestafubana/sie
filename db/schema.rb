@@ -10,24 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121209170300) do
-
-  create_table "consultados", :force => true do |t|
-    t.string   "nome"
-    t.string   "cpf"
-    t.datetime "data_nasc"
-    t.string   "nome_mae"
-    t.string   "titulo_eleitor"
-    t.string   "sexo"
-    t.datetime "data_obito"
-    t.string   "unidade_adm"
-    t.string   "situacao_cadastral"
-    t.string   "endereco"
-    t.string   "observacoes"
-    t.string   "caminho_foto"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130228175200) do
 
   create_table "contatos", :force => true do |t|
     t.string   "nome"
@@ -44,19 +27,26 @@ ActiveRecord::Schema.define(:version => 20121209170300) do
     t.string   "uf"
     t.string   "solicitante"
     t.string   "departamento"
-    t.string   "resposta"
     t.integer  "carga_horaria"
     t.string   "caminho_foto"
     t.string   "caminho_pdf"
-    t.integer  "consultado_id"
-    t.integer  "contato_id"
     t.integer  "tipo_demanda_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.datetime "resposta"
+    t.string   "nome_consultado"
+    t.string   "cpf_consultado"
+    t.datetime "data_nasc_consultado"
+    t.string   "nome_mae_consultado"
+    t.string   "titulo_eleitor_consultado"
+    t.string   "sexo_consultado"
+    t.datetime "data_obito_consultado"
+    t.string   "unidade_adm_consultado"
+    t.string   "situacao_cadastral_consultado"
+    t.string   "endereco_consultado"
+    t.string   "observacoes_consultado"
   end
 
-  add_index "demandas", ["consultado_id"], :name => "index_demandas_on_consultado_id"
-  add_index "demandas", ["contato_id"], :name => "index_demandas_on_contato_id"
   add_index "demandas", ["tipo_demanda_id"], :name => "index_demandas_on_tipo_demanda_id"
 
   create_table "status_consulta", :force => true do |t|

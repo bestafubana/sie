@@ -1,6 +1,7 @@
 class Consultado < ActiveRecord::Base
   attr_accessible :caminho_foto,
-                  :cpf, :data_nasc,
+                  :cpf, 
+                  :data_nasc,
                   :data_obito,
                   :endereco,
                   :id,
