@@ -11,30 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :data %><br />
-    <%= f.datetime_select :data %>
+  <div class="field_group">
+    <h2>Dados da Consulta:</h2>
+    <div class="field">
+      <%= f.label :data %><br />
+      <%= f.date_select :data %>
+    </div>
+    <div class="field">
+      <%= f.label :uf %><br />
+      <%= f.text_field :uf %>
+    </div>
+    <div class="field">
+      <%= f.label :solicitante %><br />
+      <%= f.text_field :solicitante %>
+    </div>
+    <div class="field">
+      <%= f.label :departamento %><br />
+      <%= f.text_field :departamento %>
+    </div>
+    <div class="field">
+      <%= f.label :resposta %><br />
+      <%= f.text_field :resposta %>
+    </div>
+    <div class="field">
+      <%= f.label :carga_horaria %><br />
+      <%= f.text_field :carga_horaria %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :uf %><br />
-    <%= f.text_field :uf %>
-  </div>
-  <div class="field">
-    <%= f.label :solicitante %><br />
-    <%= f.text_field :solicitante %>
-  </div>
-  <div class="field">
-    <%= f.label :departamento %><br />
-    <%= f.text_field :departamento %>
-  </div>
-  <div class="field">
-    <%= f.label :resposta %><br />
-    <%= f.text_field :resposta %>
-  </div>
-  <div class="field">
-    <%= f.label :carga_horaria %><br />
-    <%= f.text_field :carga_horaria %>
-  </div>
+  
+  <div class="field_group">
+    <h2>Dados do Consultado:</h2>
+    <%= f.hidden_field :tipo_demanda, :value => 1 %>
+    
+    
+  </div>  
   <div class="actions">
     <%= f.submit %>
   </div>

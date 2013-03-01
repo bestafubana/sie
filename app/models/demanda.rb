@@ -19,5 +19,6 @@ class Demanda < ActiveRecord::Base
                   :sexo_consultado,
                   :situacao_cadastral_consultado,
                   :titulo_eleitor_consultado,
-                  :unidade_adm_consultado
+                  :unidade_adm_consultado,
+                  :tipo_demanda
 end
