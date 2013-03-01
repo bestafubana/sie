@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228175200) do
+ActiveRecord::Schema.define(:version => 20130228224300) do
 
   create_table "contatos", :force => true do |t|
     t.string   "nome"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20130228175200) do
     t.integer  "carga_horaria"
     t.string   "caminho_foto"
     t.string   "caminho_pdf"
-    t.integer  "tipo_demanda_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.datetime "resposta"
@@ -45,18 +44,11 @@ ActiveRecord::Schema.define(:version => 20130228175200) do
     t.string   "situacao_cadastral_consultado"
     t.string   "endereco_consultado"
     t.string   "observacoes_consultado"
+    t.integer  "tipo_demanda"
   end
-
-  add_index "demandas", ["tipo_demanda_id"], :name => "index_demandas_on_tipo_demanda_id"
 
   create_table "status_consulta", :force => true do |t|
     t.string   "nome"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "tipo_demandas", :force => true do |t|
-    t.string   "tipo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

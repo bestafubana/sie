@@ -1,5 +1,4 @@
 class Demanda < ActiveRecord::Base
-  has_one :tipo_demanda
   attr_accessible :caminho_foto, 
                   :caminho_pdf, 
                   :carga_horaria, 
