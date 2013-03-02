@@ -12,14 +12,25 @@
   <% end %>
 
   <div class="field_group">
-    <h2>Dados da Consulta:</h2>
+    <h3>Dados da Consulta:</h3>
     <div class="field">
       <%= f.label :data %><br />
       <%= f.date_select :data %>
     </div>
     <div class="field">
       <%= f.label :uf %><br />
-      <%= f.text_field :uf %>
+      <%= select_tag(:uf, options_for_select([['Acre', "AC"],
+        ['Alagoas', "AL"], ['Amazonas', "AM"],['Amapá', "AP"],
+        ['Bahia', "BA"], ['Ceará', "CE"],['Distrito Federal', "DF"],
+        ['Espirito Santo', "ES"], ['Goiás', "GO"],['Maranhão', "MA"],
+        ['Minas Gerais', "MG"], ['Mato Grosso do Sul', "MS"],
+        ['Mato Grosso', "MT"],
+        ['Pará', "PA"], ['Pernambuco', "PE"],['Piauí', "PI"],
+        ['Paraná', "PR"], ['Rio de Janeiro', "RJ"],['Rio Grande do Norte', "RN"],
+        ['Rio Grande do Sul', "RS"], ['Rondônia', "RO"],['Roraima', "RR"],
+        ['Santa Catarina', "SC"], ['São Paulo', "SP"], ['Sergipe', "SE"],
+        ['Tocantins', "TO"]
+        ])) %>
     </div>
     <div class="field">
       <%= f.label :solicitante %><br />
@@ -31,7 +42,7 @@
     </div>
     <div class="field">
       <%= f.label :resposta %><br />
-      <%= f.text_field :resposta %>
+      <%= f.date_select :resposta %>
     </div>
     <div class="field">
       <%= f.label :carga_horaria %><br />
@@ -40,9 +51,55 @@
   </div>
   
   <div class="field_group">
-    <h2>Dados do Consultado:</h2>
+    <h3>Dados do Consultado:</h3>
     <%= f.hidden_field :tipo_demanda, :value => 1 %>
-    
+    <div class="field">
+      <%= f.label :nome_consultado, "Nome" %><br />
+      <%= f.text_field :nome_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :cpf_consultado, "CPF" %><br />
+      <%= f.text_field :cpf_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :data_nasc_consultado, "Data de Nascimento" %><br />
+      <%= f.date_select :data_nasc_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :nome_mae_consultado, "Nome da Mãe" %><br />
+      <%= f.text_field :nome_mae_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :titulo_eleitor_consultado, "Título de Eleitor" %><br />
+      <%= f.text_field :titulo_eleitor_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :sexo_consultado, "Sexo" %><br />
+      <%= radio_button_tag(:sexo_consultado, "M") %>
+      <%= label_tag(:sexo_consultado_M, "Masculino") %>
+      <%= radio_button_tag(:sexo_consultado, "F") %>
+      <%= label_tag(:sexo_consultado_F, "Feminino") %>
+    </div>
+    <div class="field">
+      <%= f.label :data_obito_consultado, "Data de Óbito" %><br />
+      <%= f.date_select :data_obito_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :unidade_adm_consultado, "Unidade Administrativa" %><br />
+      <%= f.text_field :unidade_adm_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :situacao_cadastral_consultado, "Situação Cadastral" %><br />
+      <%= f.text_field :situacao_cadastral_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :endereco_consultado, "Endereço" %><br />
+      <%= f.text_field :endereco_consultado %>
+    </div>
+    <div class="field">
+      <%= f.label :observacoes_consultado, "Observações" %><br />
+      <%= text_area_tag(:observacoes_consultado, "", :size => "24x6") %>
+    </div>
     
   </div>  
   <div class="actions">

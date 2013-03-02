@@ -9,9 +9,18 @@ class DemandasController < ApplicationController
       format.json { render :json => @demandas }
     end
   end
+  
+  def list
+    @demandas = Demanda.where("tipo_demanda = ?", params[:tipo_demanda])
+
+    respond_to do |format|
+      format.html { render "demandas/consultas" }
+      format.json { render :json => @demandas }
+    end    
+  end
 
   # GET /demandas/1
-  # GET /demandas/1.json
+  # GET /demandas/1.json 
   def show
     @demanda = Demanda.find(params[:id])
 
