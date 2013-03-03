@@ -45,7 +45,7 @@ class DemandasController < ApplicationController
     @demanda = Demanda.new
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render "demandas/new_consulta" }
       format.json { render :json => @demandas }
     end
   end

@@ -25,7 +25,7 @@
   <%= @contato.telefone %>
 </p>
 
-<script>$('a[accesskey|="1"]').parent().addClass("current_page_item");</script>
+<script>$('li[accesskey|="1"]').addClass("current_page_item");</script>
 <%= link_to 'Editar', edit_contato_path(@contato) %> |
 <%= link_to 'Voltar', contatos_path %>
 

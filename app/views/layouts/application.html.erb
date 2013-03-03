@@ -20,10 +20,10 @@
           </div>
           <div id="menu">
             <ul>
-              <li><a href="#" accesskey="1" title="">Contatos</a></li>
-              <li><a href="#" accesskey="2" title="">Consultas</a></li>
-              <li><a href="#" accesskey="3" title="">Levantamentos</a></li>
-              <li><a href="#" accesskey="4" title="">Flagrantes</a></li>
+              <li accesskey="1"><%= link_to "Contatos", :controller => "contatos" %></li>
+              <li accesskey="2"><%= link_to "Consultas", :controller => "demandas", :action => "list", :tipo_demanda => 1 %>
+              <li accesskey="3"><%= link_to "Levantamentos", :controller => "demandas", :action => "list", :tipo_demanda => 2 %>
+              <li accesskey="4"><%= link_to "Flagrantes", :controller => "demandas", :action => "list", :tipo_demanda => 3 %>
               <li class="logout"><%= link_to "SAIR", logout_path, :method => :post %></li>
             </ul>
           </div>

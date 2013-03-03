@@ -1,27 +1,38 @@
 <h1>Listing demandas</h1>
 
-<table>
+<script>
+    $(document).ready(function() {
+        $('li[accesskey|="2"]').addClass("current_page_item");
+    });
+</script>
+
+<%= render '/layouts/filtro' %>
+<table id="box-table-a" class="advancedtable">
   <tr>
-    <th>Data</th>
-    <th>Uf</th>
-    <th>Solicitante</th>
-    <th>Departamento</th>
-    <th>Resposta</th>
-    <th>Carga horaria</th>
-    <th>Caminho foto</th>
-    <th>Caminho pdf</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <thead>
+      <th>Data</th>
+      <th>Consultado</th>
+      <th>Uf</th>
+      <th>Solicitante</th>
+      <th>Departamento</th>
+      <th>Resposta</th>
+      <th>Carga horaria</th>
+      <th>Foto</th>
+      <th>PDF</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
   </tr>
 
 <% @demandas.each do |demanda| %>
   <tr>
     <td><%= demanda.data.strftime("%m/%d/%Y") %></td>
+    <td><%= demanda.nome_consultado %></td>
     <td><%= demanda.uf %></td>
     <td><%= demanda.solicitante %></td>
     <td><%= demanda.departamento %></td>
-    <td><%= demanda.resposta %></td>
+    <td><%= demanda.resposta.strftime("%m/%d/%Y") %></td>
     <td><%= demanda.carga_horaria %></td>
     <td><%= demanda.caminho_foto %></td>
     <td><%= demanda.caminho_pdf %></td>
@@ -34,4 +45,4 @@
 
 <br />
 
-<%= link_to 'New Demanda', new_demanda_path %>
+<%= link_to 'Nova Consulta', "/consultas/new" %>
