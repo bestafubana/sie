@@ -30,7 +30,7 @@
         ['Rio Grande do Sul', "RS"], ['Rondônia', "RO"],['Roraima', "RR"],
         ['Santa Catarina', "SC"], ['São Paulo', "SP"], ['Sergipe', "SE"],
         ['Tocantins', "TO"]
-        ])) %>
+        ], params[:uf])) %>
     </div>
     <div class="field">
       <%= f.label :solicitante %><br />
@@ -63,7 +63,7 @@
     </div>
     <div class="field">
       <%= f.label :data_nasc_consultado, "Data de Nascimento" %><br />
-      <%= f.date_select :data_nasc_consultado %>
+      <%= f.date_select (:data_nasc_consultado, :start_year => 1900, :end_year => Date.current.year - 13) %>
     </div>
     <div class="field">
       <%= f.label :nome_mae_consultado, "Nome da Mãe" %><br />
@@ -82,7 +82,7 @@
     </div>
     <div class="field">
       <%= f.label :data_obito_consultado, "Data de Óbito" %><br />
-      <%= f.date_select :data_obito_consultado %>
+      <%= f.date_select (:data_obito_consultado, :start_year => 1900, :end_year => Date.current.year) %>
     </div>
     <div class="field">
       <%= f.label :unidade_adm_consultado, "Unidade Administrativa" %><br />

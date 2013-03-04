@@ -10,7 +10,7 @@ Sie::Application.routes.draw do
 
   resources :demandas
   
-  get "/consultas/:tipo_demanda" => "demandas#list"
+  get "/consultas/list/:tipo_demanda" => "demandas#list"
   match "/consultas/new" => "demandas#new_consulta"
 
   #resources :consultados
