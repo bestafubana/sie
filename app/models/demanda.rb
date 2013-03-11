@@ -20,4 +20,5 @@ class Demanda < ActiveRecord::Base
                   :titulo_eleitor_consultado,
                   :unidade_adm_consultado,
                   :tipo_demanda
+  mount_uploader  :foto, AvatarUploader
 end

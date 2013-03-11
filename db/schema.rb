@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228224300) do
+ActiveRecord::Schema.define(:version => 20130305200500) do
 
   create_table "contatos", :force => true do |t|
     t.string   "nome"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130228224300) do
     t.string   "endereco_consultado"
     t.string   "observacoes_consultado"
     t.integer  "tipo_demanda"
+    t.string   "foto"
   end
 
   create_table "status_consulta", :force => true do |t|

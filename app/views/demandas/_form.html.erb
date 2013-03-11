@@ -1,4 +1,4 @@
-<%= form_for(@demanda) do |f| %>
+<%= form_for(@demanda, :html => { :multipart => true }) do |f| %>
   <% if @demanda.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@demanda.errors.count, "error") %> prohibited this demanda from being saved:</h2>

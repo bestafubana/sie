@@ -11,6 +11,10 @@ gem 'json'
 
 gem 'prawn'
 
+gem "carrierwave"
+
+gem "rmagick"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

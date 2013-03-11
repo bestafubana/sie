@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Id:</b>
-  <%= @demanda.id %>
-</p>
-
-<p>
   <b>Data:</b>
   <%= @demanda.data %>
 </p>
@@ -35,16 +30,5 @@
   <%= @demanda.carga_horaria %>
 </p>
 
-<p>
-  <b>Caminho foto:</b>
-  <%= @demanda.caminho_foto %>
-</p>
-
-<p>
-  <b>Caminho pdf:</b>
-  <%= @demanda.caminho_pdf %>
-</p>
-
-
-<%= link_to 'Edit', edit_demanda_path(@demanda) %> |
-<%= link_to 'Back', demandas_path %>
+<%= link_to 'Editar', edit_demanda_path(@demanda) %> |
+<%= link_to 'Voltar', "/consultas/list/1" %>

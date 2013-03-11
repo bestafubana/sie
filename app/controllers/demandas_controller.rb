@@ -78,7 +78,7 @@ class DemandasController < ApplicationController
 
     respond_to do |format|
       if @demanda.update_attributes(params[:demanda])
-        format.html { redirect_to @demanda, :notice => 'Demanda was successfully updated.' }
+        format.html { redirect_to "/consultas/list/1", :notice => 'Demanda was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
