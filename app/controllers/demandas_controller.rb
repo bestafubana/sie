@@ -14,8 +14,16 @@ class DemandasController < ApplicationController
     @demandas = Demanda.where("tipo_demanda = ?", params[:tipo_demanda])
 
     respond_to do |format|
-      format.html { render "demandas/consultas" }
-      format.json { render :json => @demandas }
+      if params[:tipo_demanda] == '1'
+        format.html { render "demandas/consultas" }
+        format.json { render :json => @demandas }
+      elsif params[:tipo_demanda] == '2'
+        format.html { render "demandas/levantamentos" }
+        format.json { render :json => @demandas }
+      else
+        format.html { render "demandas/flagrantes" }
+        format.json { render :json => @demandas }
+      end
     end    
   end
 
@@ -46,6 +54,15 @@ class DemandasController < ApplicationController
 
     respond_to do |format|
       format.html { render "demandas/new_consulta" }
+      format.json { render :json => @demandas }
+    end
+  end
+  
+  def new_levantamento
+    @demanda = Demanda.new
+
+    respond_to do |format|
+      format.html { render "demandas/new_levantamento" }
       format.json { render :json => @demandas }
     end
   end

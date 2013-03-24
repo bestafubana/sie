@@ -12,6 +12,7 @@ Sie::Application.routes.draw do
   
   get "/consultas/list/:tipo_demanda" => "demandas#list"
   match "/consultas/new" => "demandas#new_consulta"
+  match "/levantamentos/new" => "demandas#new_levantamento"
 
   #resources :consultados
 
