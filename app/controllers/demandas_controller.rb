@@ -66,6 +66,15 @@ class DemandasController < ApplicationController
       format.json { render :json => @demandas }
     end
   end
+  
+  def new_flagrante
+    @demanda = Demanda.new
+
+    respond_to do |format|
+      format.html { render "demandas/new_flagrante" }
+      format.json { render :json => @demandas }
+    end
+  end
 
   # GET /demandas/1/edit
   def edit
@@ -111,8 +120,16 @@ class DemandasController < ApplicationController
     @demanda.destroy
 
     respond_to do |format|
-      format.html { redirect_to demandas_url }
-      format.json { head :no_content }
+      if params[:tipo_demanda] == '1'
+        format.html { redirect_to "/consultas/list/1" }
+        format.json { render :json => @demandas }
+      elsif params[:tipo_demanda] == '2'
+        format.html { redirect_to "/consultas/list/2" }
+        format.json { render :json => @demandas }
+      else
+        format.html { redirect_to "/consultas/list/3" }
+        format.json { render :json => @demandas }
+      end
     end
   end
 end

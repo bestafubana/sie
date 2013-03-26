@@ -1,4 +1,5 @@
 class Demanda < ActiveRecord::Base
+  mount_uploader  :foto, AvatarUploader
   attr_accessible :caminho_foto, 
                   :caminho_pdf, 
                   :carga_horaria, 
@@ -19,6 +20,7 @@ class Demanda < ActiveRecord::Base
                   :situacao_cadastral_consultado,
                   :titulo_eleitor_consultado,
                   :unidade_adm_consultado,
-                  :tipo_demanda
-  mount_uploader  :foto, AvatarUploader
+                  :tipo_demanda,
+                  :remote_file_url,
+                  :foto
 end
