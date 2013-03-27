@@ -34,7 +34,7 @@
     <td><%= demanda.departamento %></td>
     <td><%= demanda.resposta.strftime("%m/%d/%Y") %></td>
     <td><%= demanda.carga_horaria %></td>
-    <td><%= image_tag(demanda.foto_url, :width => 200) if demanda.foto.present?%></td>
+    <td><%= image_tag(demanda.foto_url, :width => 30) if demanda.foto.present?%></td>
     <td><%= demanda.caminho_foto %></td>
     <td><%= demanda.caminho_pdf %></td>
     <td><%= link_to 'Show', demanda %></td>
