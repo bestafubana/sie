@@ -99,7 +99,7 @@
       <%= text_area_tag(:observacoes_consultado, "", :size => "24x6") %>
     </div>
     <div class="field">
-      <%= image_tag(demanda.foto_url, :width => 150) if demanda.foto.present?%>
+      <%= image_tag(@demanda.foto_url, :width => 150) if @demanda.foto.present?%>
       <%= f.file_field :foto %>
     </div>
     
