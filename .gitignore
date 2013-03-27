@@ -47,3 +47,5 @@ config/database.yml
 .idea/vcs.xml
 
 .idea/workspace.xml
+sie.komodoproject
+.swp
