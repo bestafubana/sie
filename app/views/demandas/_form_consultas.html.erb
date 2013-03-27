@@ -99,13 +99,20 @@
       <%= text_area_tag(:observacoes_consultado, "", :size => "24x6") %>
     </div>
     <div class="field">
-      <%= image_tag(@demanda.foto_url, :width => 150, :onchange => '$("#foto").remove()') if @demanda.foto.present?%> <br />
-      <%= f.file_field :foto %>
+      <%= image_tag(@demanda.foto_url, :width => 150, :id => 'foto') if @demanda.foto.present?%> <br />
+      <%= f.file_field :foto , :id => "file_foto" %>
     </div>
     
   </div>  
   <div class="actions">
     <%= f.submit %>
   </div>
-<script>$('a[accesskey|="2"]').parent().addClass("current_page_item");</script>
+<script>
+  $(document).ready(function() {
+    $("#file_foto").change(function(){
+      $("#foto").remove();
+    });
+  });
+  $('a[accesskey|="2"]').parent().addClass("current_page_item");
+</script>
 <% end %>
