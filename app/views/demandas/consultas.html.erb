@@ -1,4 +1,4 @@
-<h1>Listing demandas</h1>
+<h1>Consultas</h1>
 
 <script>
     $(document).ready(function() {
@@ -19,7 +19,7 @@
       <th>Carga horaria</th>
       <th>Foto</th>
       <th>PDF</th>
-      <th colspan="3" style="text-align:center">Opera&ccedil;&otilde;es</th>
+      <th colspan="3" class="noclick" style="text-align:center">Opera&ccedil;&otilde;es</th>
     </thead>
   </tr>
 
@@ -34,9 +34,9 @@
     <td><%= demanda.carga_horaria %></td>
     <td><%= image_tag(demanda.foto_url, :width => 30) if demanda.foto.present?%></td>
     <td><%= demanda.caminho_pdf %></td>
-    <td><%= link_to 'Show', demanda %></td>
-    <td><%= link_to 'Edit', edit_demanda_path(demanda) %></td>
-    <td><%= link_to 'Destroy', demanda, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    <td class="visualizar"><img src="assets/open.png" style="vertical-align:middle"/><%= link_to 'Visualizar', demanda %></td>
+    <td class="editar"> <img src="assets/edit.png" style="vertical-align:middle"/><%= link_to 'Editar', edit_demanda_path(demanda) %></td>
+    <td class="excluir"><img src="assets/delete.png" style="vertical-align:middle"/><%= link_to 'Excluir', demanda, :method => :delete, :data => { :confirm => 'Voc tem certeza que desejar excluir essa consulta?' } %></td>
   </tr>
 <% end %>
 </table>
