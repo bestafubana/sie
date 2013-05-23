@@ -79,6 +79,8 @@ class DemandasController < ApplicationController
   # GET /demandas/1/edit
   def edit
     @demanda = Demanda.find(params[:id])
+    
+    
   end
 
   # POST /demandas
@@ -88,7 +90,7 @@ class DemandasController < ApplicationController
 
     respond_to do |format|
       if @demanda.save
-        format.html { redirect_to @demanda, :notice => 'Demanda was successfully created.' }
+        format.html { redirect_to @demanda, :notice => 'Demanda criada com sucesso.' }
         format.json { render :json => @demanda, :status => :created, :location => @demanda }
       else
         format.html { render :action => "new" }
