@@ -79,8 +79,21 @@ class DemandasController < ApplicationController
   # GET /demandas/1/edit
   def edit
     @demanda = Demanda.find(params[:id])
-    
-    
+  end
+  
+  # GET /demandas/1/edit_flagrante
+  def edit_flagrante
+    @demanda = Demanda.find(params[:id])
+  end
+  
+  # GET /demandas/1/edit_consulta
+  def edit_consulta
+    @demanda = Demanda.find(params[:id])
+  end
+  
+  # GET /demandas/1/edit_levantamento
+  def edit_levantamento
+    @demanda = Demanda.find(params[:id])
   end
 
   # POST /demandas

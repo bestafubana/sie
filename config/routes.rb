@@ -14,6 +14,9 @@ Sie::Application.routes.draw do
   match "/consultas/new" => "demandas#new_consulta"
   match "/levantamentos/new" => "demandas#new_levantamento"
   match "/flagrantes/new" => "demandas#new_flagrante"
+  get "/flagrantes/edit_flagrante/:id" => "demandas#edit_flagrante"
+  get "/levantamentos/edit_levantamento/:id" => "demandas#edit_levantamento"
+  get "/consultas/edit_consulta/:id" => "demandas#edit_consulta" 
 
   #resources :consultados
 
