@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class DemandasController < ApplicationController
   # GET /demandas
   # GET /demandas.json
@@ -47,6 +49,20 @@ class DemandasController < ApplicationController
       format.html # new.html.erb
       format.json { render :json => @demanda }
     end
+  end
+  
+  def relatorio_consulta
+    @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m",
+                             {:td => params[:tipo_demanda], :m => params[:mes]}).group("uf").order("uf ASC")
+    respond_to do |format|
+      format.html { render "demandas/demandas_teste" }
+      format.pdf do
+        pdf = RelatorioConsultas.new(@demandas, params[:mes], view_context)
+        send_data pdf.render, :filename =>
+            "relatorio_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
+                  :type => "application/pdf", :layout => "application"
+      end
+    end   
   end
 
   def new_consulta

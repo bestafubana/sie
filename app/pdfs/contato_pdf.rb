@@ -1,6 +1,6 @@
 class ContatoPdf < Prawn::Document
 
-  def initialize(contato, view)
+  def initialize(contato, mes, view)
     super()
     @contato = contato
     @view = view

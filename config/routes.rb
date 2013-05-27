@@ -11,12 +11,13 @@ Sie::Application.routes.draw do
   resources :demandas
   
   get "/consultas/list/:tipo_demanda" => "demandas#list"
+  get "/consultas/relatorio/:tipo_demanda/:mes" => "demandas#relatorio_consulta"
   match "/consultas/new" => "demandas#new_consulta"
   match "/levantamentos/new" => "demandas#new_levantamento"
   match "/flagrantes/new" => "demandas#new_flagrante"
   get "/flagrantes/edit_flagrante/:id" => "demandas#edit_flagrante"
   get "/levantamentos/edit_levantamento/:id" => "demandas#edit_levantamento"
-  get "/consultas/edit_consulta/:id" => "demandas#edit_consulta" 
+  get "/consultas/edit_consulta/:id" => "demandas#edit_consulta"
 
   #resources :consultados
 

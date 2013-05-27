@@ -1,0 +1,20 @@
+<h1>Consultas</h1>
+
+<table id="box-table-a" class="advancedtable">
+  <tr>
+    <thead>
+      <th>Data</th>
+      <th>Uf</th>
+      <th>count</th>
+    </thead>
+  </tr>
+
+<% @demandas.each do |demanda| %>
+  <tr>
+    <td><%= demanda.data.strftime("%m/%d/%Y") %></td>
+    <td><%= demanda.uf %></td>
+    <td><%= demanda.count %></td>
+  </tr>
+<% end %>
+</table>
+
