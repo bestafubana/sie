@@ -13,7 +13,24 @@ class DemandasController < ApplicationController
   end
   
   def list
-    @demandas = Demanda.where("tipo_demanda = ?", params[:tipo_demanda])
+    
+    mes = nil
+    ano = nil
+    
+    if params[:mes] != nil and !params[:mes].empty?
+      mes = params[:mes]
+    else
+      mes = Time.now.month
+    end
+    
+    if params[:ano] != nil and !params[:ano].empty?
+      ano = params[:ano]
+    else
+      ano = Time.now.year
+    end
+    
+    @demandas = Demanda.where("tipo_demanda = :td AND MONTH(data) = :m AND YEAR(data) = :a",
+                              :td => params[:tipo_demanda], :m => mes, :a => ano)
 
     respond_to do |format|
       if params[:tipo_demanda] == '1'
@@ -52,12 +69,12 @@ class DemandasController < ApplicationController
   end
   
   def relatorio_consulta
-    @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m",
-                             {:td => params[:tipo_demanda], :m => params[:mes]}).group("uf").order("uf ASC")
+    @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m AND YEAR(data) = :a",
+                             {:td => params[:tipo_demanda], :m => params[:mes], :a => params[:ano]}).group("uf").order("uf ASC")
     respond_to do |format|
       format.html { render "demandas/demandas_teste" }
       format.pdf do
-        pdf = RelatorioConsultas.new(@demandas, params[:mes], view_context)
+        pdf = RelatorioConsultas.new(@demandas, params[:mes], params[:ano], view_context)
         send_data pdf.render, :filename =>
             "relatorio_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
                   :type => "application/pdf", :layout => "application"

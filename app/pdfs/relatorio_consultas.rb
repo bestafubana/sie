@@ -1,7 +1,7 @@
 # encoding: utf-8
 class RelatorioConsultas < Prawn::Document
 
-  def initialize(demandas, mes, view)
+  def initialize(demandas, mes, ano, view)
     super()
     @demandas = demandas
     @view = view
@@ -22,19 +22,20 @@ class RelatorioConsultas < Prawn::Document
       move_down 20
       
       font "Courier", :style => :normal
+      dados = [["UF", "Quantidade"]]
+    
+      @demandas.each do |demanda|
+        
+        dados.push [demanda.uf, demanda.count]
+      end
+      
+      table(dados, :header => true, :width => 400,
+            :column_widths => [150, 250], :row_colors => ["F0F0F0", "FFFFCC"])
+      
     else
       text "Periodo sem consultas",:size => 18, :align => :center
     end
     
-    dados = [["UF", "Quantidade"]]
-    
-    @demandas.each do |demanda|
-      
-      dados.push [demanda.uf, demanda.count]
-    end
-    
-    table(dados, :header => true, :width => 400,
-          :column_widths => [150, 250], :row_colors => ["F0F0F0", "FFFFCC"])
     
   end
 

@@ -7,11 +7,9 @@ Sie::Application.routes.draw do
   post '/register' => 'login#register'
   post '/authenticate' => 'login#authenticate'
   post '/logout' => 'login#logout'
-
-  resources :demandas
   
-  get "/consultas/list/:tipo_demanda" => "demandas#list"
-  get "/consultas/relatorio/:tipo_demanda/:mes" => "demandas#relatorio_consulta"
+  get "/consultas/list/:tipo_demanda/:mes/:ano" => "demandas#list"
+  get "/consultas/list/:tipo_demanda/" => "demandas#list"
   match "/consultas/new" => "demandas#new_consulta"
   match "/levantamentos/new" => "demandas#new_levantamento"
   match "/flagrantes/new" => "demandas#new_flagrante"
@@ -19,20 +17,14 @@ Sie::Application.routes.draw do
   get "/levantamentos/edit_levantamento/:id" => "demandas#edit_levantamento"
   get "/consultas/edit_consulta/:id" => "demandas#edit_consulta"
 
-  #resources :consultados
-
+  # Relat—rios
+  match "/consultas/relatorio/:tipo_demanda/:mes/:ano" => "demandas#relatorio_consulta"
 
   resources :usuarios
 
-
-  #resources :status_consulta
-
-
-  #resources :tipo_demandas
-
-
   resources :contatos
 
+  resources :demandas
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

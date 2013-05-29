@@ -4,9 +4,35 @@
     $(document).ready(function() {
         $('li[accesskey|="2"]').addClass("current_page_item");
     });
+    
+    function gerarRelatorio(){
+       var url = '/consultas/relatorio/1/' +
+         $('#date_mes').val() + "/" +  $('#date_ano').val() + ".pdf";
+       
+        window.location = url;
+    }
+    
+    function filtrar(){
+       var url = '/consultas/list/1/' +
+         $('#date_mes').val() + "/" +  $('#date_ano').val();
+       
+        window.location = url;
+    }
 </script>
-
+<br>
 <%= render '/layouts/filtro' %>
+<div>
+    <%= label :ano, "Ano" %>
+    <%= select_year (Date.today, :field_name => 'ano', :start_year => 2010, :end_year => Date.current.year) %>
+    <br>
+    <%= label :mes, "M" %>&ecirc;s
+    <%= select_month(Date.today, :field_name => 'mes', :use_month_numbers => true) %>
+</div>
+<br>
+<a href="#" onclick="filtrar()">Filtrar por m&ecirc;s/ano</a>
+<br>
+<a href="#" onclick="gerarRelatorio()">Gerar Relat&oacute;rio Mensal</a>
+
 <table id="box-table-a" class="advancedtable">
   <tr>
     <thead>
@@ -25,12 +51,12 @@
 
 <% @demandas.each do |demanda| %>
   <tr>
-    <td><%= demanda.data.strftime("%m/%d/%Y") %></td>
+    <td><%= demanda.data.strftime("%d/%m/%Y") %></td>
     <td><%= demanda.nome_consultado %></td>
     <td><%= demanda.uf %></td>
     <td><%= demanda.solicitante %></td>
     <td><%= demanda.departamento %></td>
-    <td><%= demanda.resposta.strftime("%m/%d/%Y") %></td>
+    <td><%= demanda.resposta.strftime("%d/%m/%Y") %></td>
     <td><%= demanda.carga_horaria %></td>
     <td><%= image_tag(demanda.foto_url, :width => 30) if demanda.foto.present?%></td>
     <td><%= demanda.caminho_pdf %></td>
