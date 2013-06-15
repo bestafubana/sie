@@ -1,7 +1,7 @@
 # encoding: utf-8
 class RelatorioConsultas < Prawn::Document
 
-  def initialize(demandas, mes, ano, view)
+  def initialize(demandas, mes, ano, view, demanda_texto)
     super()
     @demandas = demandas
     @view = view
@@ -17,7 +17,7 @@ class RelatorioConsultas < Prawn::Document
     
     #checa se n‹o est‡ vazia a lista de demandas
     if @demandas.length > 0
-      text "Relatorio de Consultas - #{@demandas[0].data.strftime("%m/%Y")}",:size => 18 
+      text "Relatorio de #{demanda_texto} - #{@demandas[0].data.strftime("%m/%Y")}",:size => 18 
       
       move_down 20
       
