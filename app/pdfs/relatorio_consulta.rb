@@ -15,7 +15,7 @@ class RelatorioConsultas < Prawn::Document
     font "Courier", :style => :bold
     
     
-    #checa se nÜo està vazia a lista de demandas
+    #checa se n‹o est‡ vazia a lista de demandas
     if @demandas.length > 0
       text "Relatorio de #{demanda_texto} - #{@demandas[0].data.strftime("%m/%Y")}",:size => 18 
       

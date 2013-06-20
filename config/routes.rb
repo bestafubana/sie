@@ -19,6 +19,8 @@ Sie::Application.routes.draw do
 
   # Relat—rios
   match "/consultas/relatorio/:tipo_demanda/:mes/:ano" => "demandas#relatorio_consulta"
+  
+  match "/consultas/relatorio_consultado/:id" => "demandas#relatorio_consultado"
 
   resources :usuarios
 

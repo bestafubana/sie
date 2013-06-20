@@ -68,6 +68,20 @@ class DemandasController < ApplicationController
     end
   end
   
+  def relatorio_consultado
+    @demanda = Demanda.find(params[:id])
+    
+    respond_to do |format|
+      format.html { render "demandas/#{params[:id]}" }
+      format.pdf do
+        pdf = RelatorioConsultado.new(@demanda, view_context, request)
+        send_data pdf.render, :filename =>
+            "relatorio_consultado_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
+                  :type => "application/pdf", :layout => "application"
+      end
+    end   
+  end
+  
   def relatorio_consulta
     @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m AND YEAR(data) = :a",
                              {:td => params[:tipo_demanda], :m => params[:mes], :a => params[:ano]}).group("uf").order("uf ASC")
