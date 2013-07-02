@@ -21,6 +21,7 @@
 </script>
 <br>
 <%= render '/layouts/filtro' %>
+
 <div>
     <%= label :ano, "Ano" %>
     <%= select_year (Date.today, :field_name => 'ano', :start_year => 2010, :end_year => Date.current.year) %>

@@ -4,9 +4,36 @@
     $(document).ready(function() {
         $('li[accesskey|="4"]').addClass("current_page_item");
     });
+    
+    function gerarRelatorio(){
+       var url = '/consultas/relatorio/3/' +
+         $('#date_mes').val() + "/" +  $('#date_ano').val() + ".pdf";
+       
+        window.location = url;
+    }
+    
+    function filtrar(){
+       var url = '/consultas/list/3/' +
+         $('#date_mes').val() + "/" +  $('#date_ano').val();
+       
+        window.location = url;
+    }
 </script>
 
 <%= render '/layouts/filtro' %>
+
+<div>
+    <%= label :ano, "Ano" %>
+    <%= select_year (Date.today, :field_name => 'ano', :start_year => 2010, :end_year => Date.current.year) %>
+    <br>
+    <%= label :mes, "M" %>&ecirc;s
+    <%= select_month(Date.today, :field_name => 'mes', :use_month_numbers => true) %>
+</div>
+<br>
+<a href="#" onclick="filtrar()">Filtrar por m&ecirc;s/ano</a>
+<br>
+<a href="#" onclick="gerarRelatorio()">Gerar Relat&oacute;rio Mensal</a>
+
 <table id="box-table-a" class="advancedtable">
   <tr>
     <thead>
