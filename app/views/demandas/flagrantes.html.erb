@@ -19,20 +19,8 @@
         window.location = url;
     }
 </script>
-
+<br>
 <%= render '/layouts/filtro' %>
-
-<div>
-    <%= label :ano, "Ano" %>
-    <%= select_year (Date.today, :field_name => 'ano', :start_year => 2010, :end_year => Date.current.year) %>
-    <br>
-    <%= label :mes, "M" %>&ecirc;s
-    <%= select_month(Date.today, :field_name => 'mes', :use_month_numbers => true) %>
-</div>
-<br>
-<a href="#" onclick="filtrar()">Filtrar por m&ecirc;s/ano</a>
-<br>
-<a href="#" onclick="gerarRelatorio()">Gerar Relat&oacute;rio Mensal</a>
 
 <table id="box-table-a" class="advancedtable">
   <tr>

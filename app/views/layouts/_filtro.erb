@@ -6,8 +6,34 @@
     });
 </script>
 
-Filtro:<br>
-<input type="text" id="search" />
-<span id="loader" style="display:none;">
-  <img src="/assets/loader.gif" style="margin-left: 5px;position: relative;top: 4px;">
-</span>
+<div id="box_filtro">
+    <span id="titulo_filtro">Filtro:</span><br>
+    
+    <fieldset style="margin-bottom: 10px;margin-top: 10px;">
+        <legend>Por Nome:</legend>
+    
+        <input type="text" id="search" />
+        <span id="loader" style="display:none;">
+          <img src="/assets/loader.gif" style="position: absolute;top: 367px;">
+        </span>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Por M&ecirc;s/Ano:</legend>
+        <div id="filtro_ano">
+            <%= label :ano, "Ano" %>:
+            <%= select_year (Date.today, :field_name => 'ano', :start_year => 2010, :end_year => Date.current.year) %>
+            <br>
+            <%= label :mes, "M" %>&ecirc;s:
+            <%= select_month(Date.today, :field_name => 'mes', :use_month_numbers => true) %>
+        </div>
+    
+        <a href="#" onclick="filtrar()" style="margin-left: 60px;">Filtrar</a>
+    </fieldset> 
+    <br>
+    <span id="botao_relatorio">
+        <a href="#" onclick="gerarRelatorio()">Gerar Relat&oacute;rio Mensal</a> 
+    </span>
+    
+    <img src="/assets/report-icon.png" onclick="gerarRelatorio()" style="float:left;width:16px;height:16px;cursor:pointer"/>
+</div>    
