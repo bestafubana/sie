@@ -1,0 +1,15 @@
+<script>
+    $(document).ready(function() {
+        $('a[accesskey|="1"]').parent().addClass("current_page_item");
+        $("#box-table-a").advancedtable({searchField: "#search", loadElement: "#loader", searchCaseSensitive: false, ascImage: "assets/up.png", descImage: "assets/down.png"});
+        $('.noclick').unbind('click');
+    });
+</script>
+
+<div id="box_filtro">
+    <span id="titulo_filtro">Filtro Por Nome:</span><br>
+        <input type="text" id="search" />
+        <span id="loader" style="display:none;">
+          <img src="/assets/loader.gif" style="position: relative;top: 4px;">
+        </span>
+</div>    
