@@ -1,5 +1,5 @@
 database_user=root
 rails3_adapter=mysql2
 database_password=admin
-engine=rails3
 database_name=sie_test
+engine=rails3
