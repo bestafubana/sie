@@ -17,6 +17,8 @@ pickle-email-*.html
 config/.DS_Store
 <<<<<<< HEAD
 config/database.yml
+MyProject.komodoproject
+public/uploads/demanda/foto/*
 =======
 
 .DS_Store
