@@ -1,6 +1,10 @@
 class AddRoot < ActiveRecord::Migration
   def self.up
-    Usuario.create{:login => "root", :passwd => "raquel"}
+    
+    usuario = Usuario.new
+    usuario.login = "root"
+    usuario.passwd = "raquel"
+    usuario.save
    end
 
   def self.down
