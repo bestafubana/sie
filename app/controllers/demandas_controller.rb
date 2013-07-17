@@ -52,8 +52,26 @@ class DemandasController < ApplicationController
     @demanda = Demanda.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @demanda }
+        format.html { render "demandas/show_consulta" }
+        format.json { render :json => @demandas }
+    end
+  end
+  
+  def show_levantamento
+    @demanda = Demanda.find(params[:id])
+
+    respond_to do |format|
+        format.html { render "demandas/show" }
+        format.json { render :json => @demandas } 
+    end
+  end
+  
+  def show_flagrante
+    @demanda = Demanda.find(params[:id])
+
+    respond_to do |format|
+        format.html { render "demandas/show_flagrante" }
+        format.json { render :json => @demandas } 
     end
   end
 
@@ -194,7 +212,7 @@ class DemandasController < ApplicationController
 
     respond_to do |format|
       if @demanda.update_attributes(params[:demanda])
-        format.html { redirect_to "/consultas/list/1", :notice => 'Demanda was successfully updated.' }
+        format.html { redirect_to "/consultas/list/1", :notice => 'Demanda atualizada com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

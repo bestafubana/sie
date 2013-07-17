@@ -51,7 +51,7 @@
     <td><%= demanda.carga_horaria %></td>
     <td><%= image_tag(demanda.foto_url, :width => 30) if demanda.foto.present?%></td>
     <!--<td><%= demanda.caminho_pdf %></td>-->
-    <td class="visualizar"><img src="assets/open.png" style="vertical-align:middle"/><%= link_to 'Visualizar', demanda %></td>
+    <td class="visualizar"><img src="assets/open.png" style="vertical-align:middle"/><%= link_to 'Visualizar', :controller => "demandas", :action => "show", :id => demanda.id %></td>
     <td class="editar"> <img src="assets/edit.png" style="vertical-align:middle"/><%= link_to "Editar", :controller => "demandas", :action => "edit_consulta", :id => demanda.id %></td>
     <td class="excluir"><img src="assets/delete.png" style="vertical-align:middle"/><%= link_to 'Excluir', demanda, :method => :delete, :data => { :confirm => 'Voc tem certeza que desejar excluir essa consulta?' } %></td>
   </tr>

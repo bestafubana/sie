@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag(@demanda.foto_url, :width => 150) if @demanda.foto.present?%>
+
+<p>
+  <b>Data:</b>
+  <%= @demanda.data %>
+</p>
+
+<p>
+  <b>Uf:</b>
+  <%= @demanda.uf %>
+</p>
+
+<p>
+  <b>Solicitante:</b>
+  <%= @demanda.solicitante %>
+</p>
+
+<p>
+  <b>Departamento:</b>
+  <%= @demanda.departamento %>
+</p>
+
+<p>
+  <b>Resposta:</b>
+  <%= @demanda.resposta %>
+</p>
+
+<p>
+  <b>Carga horaria:</b>
+  <%= @demanda.carga_horaria %>
+</p>
+
+<p>
+  <b>Consultado:</b>
+  <%= @demanda.nome_consultado %>
+</p>
+
+<p>
+  <b>CPF:</b>
+  <%= @demanda.cpf_consultado %>
+</p>
+
+<p>
+  <b>Data Nascimento:</b>
+  <%= @demanda.data_nasc_consultado %>
+</p>
+
+<p>
+  <b>Título de Eleitor:</b>
+  <%= @demanda.titulo_eleitor_consultado %>
+</p>
+
+<p>
+  <b>Sexo:</b>
+  <%= @demanda.sexo_consultado %>
+</p>
+
+<p>
+  <b>Data do Óbito:</b>
+  <%= @demanda.data_obito_consultado %>
+</p>
+
+<p>
+  <b>Unidade Administrativa:</b>
+  <%= @demanda.unidade_adm_consultado %>
+</p>
+
+<p>
+  <b>Situação Cadastral:</b>
+  <%= @demanda.situacao_cadastral_consultado %>
+</p>
+
+<p>
+  <b>Endereço:</b>
+  <%= @demanda.endereco_consultado %>
+</p>
+
+<p>
+  <b>UF:</b>
+  <%= @demanda.uf %>
+</p>
+
+<p>
+  <b>Observações:</b>
+  <%= @demanda.observacoes_consultado %>
+</p>
+
+
+<%= link_to 'Editar', edit_demanda_path(@demanda) %> |
+<%= link_to 'Voltar', "/consultas/list/1" %>
