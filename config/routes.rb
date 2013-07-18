@@ -16,8 +16,6 @@ Sie::Application.routes.draw do
   get "/flagrantes/edit_flagrante/:id" => "demandas#edit_flagrante"
   get "/levantamentos/edit_levantamento/:id" => "demandas#edit_levantamento"
   get "/consultas/edit_consulta/:id" => "demandas#edit_consulta"
-  get "/show_levantamento/:id" => "demandas#show_levantamento"
-  get "/show_flagrante/:id" => "demandas#show_flagrante"
 
   # Relat—rios
   match "/consultas/relatorio/:tipo_demanda/:mes/:ano" => "demandas#relatorio_consulta"

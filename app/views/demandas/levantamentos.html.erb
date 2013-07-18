@@ -43,7 +43,7 @@
     <td><%= demanda.departamento %></td>
     <td><%= demanda.resposta.strftime("%m/%d/%Y") %></td>
     <td><%= demanda.carga_horaria %></td>
-    <td><%= link_to 'Visualizar', :controller => "demandas", :action => "show_levantamento", :id => demanda.id %></td>
+    <td><%= link_to 'Visualizar', demanda %></td>
     <td><%= link_to "Editar", :controller => "demandas", :action => "edit_levantamento", :id => demanda.id %></td>
     <td><%= link_to 'Excluir', demanda, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
