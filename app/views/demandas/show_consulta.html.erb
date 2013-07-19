@@ -27,7 +27,7 @@
 </p>
 
 <p>
-  <b>Carga horaria:</b>
+  <b>Carga hor&aacute;ria:</b>
   <%= @demanda.carga_horaria %>
 </p>
 
@@ -47,7 +47,7 @@
 </p>
 
 <p>
-  <b>Título de Eleitor:</b>
+  <b>T&iacute;tulo de Eleitor:</b>
   <%= @demanda.titulo_eleitor_consultado %>
 </p>
 
@@ -57,7 +57,7 @@
 </p>
 
 <p>
-  <b>Data do Óbito:</b>
+  <b>Data do &Oacute;bito:</b>
   <%= @demanda.data_obito_consultado %>
 </p>
 
@@ -67,12 +67,12 @@
 </p>
 
 <p>
-  <b>Situação Cadastral:</b>
+  <b>Situa&ccedil;&atilde;o Cadastral:</b>
   <%= @demanda.situacao_cadastral_consultado %>
 </p>
 
 <p>
-  <b>Endereço:</b>
+  <b>Endere&ccedil;o:</b>
   <%= @demanda.endereco_consultado %>
 </p>
 
@@ -82,10 +82,10 @@
 </p>
 
 <p>
-  <b>Observações:</b>
+  <b>Observa&ccedil;&otilde;es:</b>
   <%= @demanda.observacoes_consultado %>
 </p>
 
-
+<%= link_to 'Gerar Relat&oacute;rio', "demandas#relatorio_consultado" %> | 
 <%= link_to 'Editar', edit_demanda_path(@demanda) %> |
 <%= link_to 'Voltar', "/consultas/list/1" %>
