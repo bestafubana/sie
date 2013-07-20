@@ -41,8 +41,11 @@
       <%= f.text_field :departamento %>
     </div>
     <div class="field">
-      <%= f.label :resposta %><br />
-      <%= f.date_select :resposta %>
+      <input type="checkbox" id="cbResposta"> Tem resposta?
+      <div id="divResposta" style="display:none">
+        <%= f.label :resposta %><br />
+        <%= f.date_select :resposta %>
+      </div>  
     </div>
     <div class="field">
       <%= f.label :carga_horaria %><br />
@@ -79,8 +82,11 @@
       <%= f.radio_button :sexo_consultado, "F" %>Feminino
     </div>
     <div class="field">
-      <%= f.label :data_obito_consultado, "Data de Óbito" %><br />
-      <%= f.date_select (:data_obito_consultado, :start_year => 1900, :end_year => Date.current.year) %>
+      <input type="checkbox" id="cbDataObito"> Falecido
+      <div id="divDataObito" style="display:none">
+        <%= f.label :data_obito_consultado, "Data de Óbito" %><br />
+        <%= f.date_select (:data_obito_consultado, :start_year => 1900, :end_year => Date.current.year) %>
+      </div>  
     </div>
     <div class="field">
       <%= f.label :unidade_adm_consultado, "Unidade Administrativa" %><br />
@@ -112,7 +118,51 @@
     $("#file_foto").change(function(){
       $("#foto").remove();
     });
+    $("#cbDataObito").click(function(){
+      if($("#cbDataObito").prop("checked")){
+        habilitaDataObito();
+      }else{
+        desabilitaDataObito();
+      }
+    });
+    $("#cbResposta").click(function(){
+      if($("#cbResposta").prop("checked")){
+        habilitaResposta();
+      }else{
+        desabilitaResposta();
+      }
+    });
+    
   });
+  
+  function habilitaDataObito(){
+    $("#divDataObito").show();
+    $("#demanda_data_obito_consultado_3i").prop("disabled", false);
+    $("#demanda_data_obito_consultado_2i").prop("disabled", false);
+    $("#demanda_data_obito_consultado_1i").prop("disabled", false);
+  }
+  
+  function desabilitaDataObito(){
+    $("#divDataObito").hide();
+    $("#demanda_data_obito_consultado_3i").prop("disabled", true);
+    $("#demanda_data_obito_consultado_2i").prop("disabled", true);
+    $("#demanda_data_obito_consultado_1i").prop("disabled", true);
+  }
+  
+  function habilitaResposta(){
+    $("#divResposta").show();
+    $("#demanda_resposta_3i").prop("disabled", false);
+    $("#demanda_resposta_2i").prop("disabled", false);
+    $("#demanda_resposta_1i").prop("disabled", false);
+  }
+  
+  function desabilitaResposta(){
+    $("#divResposta").hide();
+    $("#demanda_resposta_3i").prop("disabled", true);
+    $("#demanda_resposta_2i").prop("disabled", true);
+    $("#demanda_resposta_1i").prop("disabled", true);
+  }
+  
   $('a[accesskey|="2"]').parent().addClass("current_page_item");
 </script>
 <% end %>

@@ -86,6 +86,6 @@
   <%= @demanda.observacoes_consultado %>
 </p>
 
-<%= link_to 'Gerar Relatorio', :controller => "demandas", :action => "relatorio_consultado", :id => @demanda.id  %> | 
+<%= link_to 'Gerar Relatorio', :controller => "demandas", :action => "relatorio_consultado", :id => @demanda.id, :format => "pdf"  %> | 
 <%= link_to 'Editar', :controller => "demandas", :action => "edit_consulta", :id => @demanda.id %> |
 <%= link_to 'Voltar', "/consultas/list/1" %>
