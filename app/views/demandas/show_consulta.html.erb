@@ -7,7 +7,7 @@
 </p>
 
 <p>
-  <b>Uf:</b>
+  <b>UF</b>
   <%= @demanda.uf %>
 </p>
 
@@ -86,6 +86,6 @@
   <%= @demanda.observacoes_consultado %>
 </p>
 
-<%= link_to 'Gerar Relat&oacute;rio', "demandas#relatorio_consultado" %> | 
+<%= link_to 'Gerar Relatorio', "/consultas/relatorio_consultado/:id", :id=>@demanda.id %> | 
 <%= link_to 'Editar', edit_demanda_path(@demanda) %> |
 <%= link_to 'Voltar', "/consultas/list/1" %>
