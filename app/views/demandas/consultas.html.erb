@@ -25,7 +25,6 @@
 
 
 <table id="box-table-a" class="advancedtable">
-  <tr>
     <thead>
       <th>Data</th>
       <th>Consultado</th>
@@ -34,28 +33,34 @@
       <th>Departamento</th>
       <th>Resposta</th>
       <th>Carga horaria</th>
-      <th>Foto</th>
+      <!--<th>Foto</th>-->
       <!--<th>PDF</th>-->
-      <th colspan="3" class="noclick" style="text-align:center">Opera&ccedil;&otilde;es</th>
+      <th class="noclick"></th>
+      <th class="noclick" style="text-align:center">Opera&ccedil;&otilde;es</th>
+      <th class="noclick"></th>
     </thead>
-  </tr>
-
-<% @demandas.each do |demanda| %>
-  <tr>
-    <td><%= demanda.data.strftime("%d/%m/%Y") %></td>
-    <td><%= demanda.nome_consultado %></td>
-    <td><%= demanda.uf %></td>
-    <td><%= demanda.solicitante %></td>
-    <td><%= demanda.departamento %></td>
-    <td><%= demanda.resposta.strftime("%d/%m/%Y") %></td>
-    <td><%= demanda.carga_horaria %></td>
-    <td><%= image_tag(demanda.foto_url, :width => 30) if demanda.foto.present?%></td>
-    <!--<td><%= demanda.caminho_pdf %></td>-->
-    <td class="visualizar"><img src="assets/open.png" style="vertical-align:middle"/><%= link_to 'Visualizar', :controller => "demandas", :action => "show", :id => demanda.id %></td>
-    <td class="editar"> <img src="assets/edit.png" style="vertical-align:middle"/><%= link_to "Editar", :controller => "demandas", :action => "edit_consulta", :id => demanda.id %></td>
-    <td class="excluir"><img src="assets/delete.png" style="vertical-align:middle"/><%= link_to 'Excluir', demanda, :method => :delete, :data => { :confirm => 'Voc tem certeza que desejar excluir essa consulta?' } %></td>
-  </tr>
-<% end %>
+    <tbody>
+    <% @demandas.each do |demanda| %>
+      <tr>
+        <td><%= demanda.data.strftime("%d/%m/%Y") %></td>
+        <td><%= demanda.nome_consultado %></td>
+        <td><%= demanda.uf %></td>
+        <td><%= demanda.solicitante %></td>
+        <td><%= demanda.departamento %></td>
+        <td><%= demanda.resposta.strftime("%d/%m/%Y") %></td>
+        <td><%= demanda.carga_horaria %></td>
+        <!--<td><%= image_tag(demanda.foto_url, :width => 30) if demanda.foto.present?%></td>-->
+        <!--<td><%= demanda.caminho_pdf %></td>-->
+        <td class="visualizar"><img src="/assets/open.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Visualizar', :controller => "demandas", :action => "show", :id => demanda.id %></td>
+        <td class="editar"> <img src="/assets/edit.png" style="vertical-align:middle"/>&nbsp;<%= link_to "Editar", :controller => "demandas", :action => "edit_consulta", :id => demanda.id %></td>
+        <td class="excluir"><img src="/assets/delete.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Excluir', demanda, :method => :delete, :data => { :confirm => 'Voc tem certeza que desejar excluir essa consulta?' } %></td>
+        <!--<td><%=link_to image_tag("open.png", :border => 0), {:action => 'show', :controller => 'demandas', :id => demanda.id}%></td>-->
+        <!--<td><%=link_to image_tag("edit.png", :border => 0), {:action => 'edit_consulta', :controller => 'demandas', :id => demanda.id}%></td>-->
+        <!--<td><%=link_to image_tag("delete.png", :border => 0), {:action => 'destroy', :controller => 'demandas', :id => demanda.id} , :data => { :confirm => 'Voc tem certeza que desejar excluir essa consulta?'}%></td>-->
+        
+      </tr>
+    <% end %>
+    </tbody>
 </table>
 
 <br />

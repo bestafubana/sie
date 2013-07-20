@@ -668,14 +668,15 @@ ul.style3 .first
     border-right: 1px solid #188BC0;
     border-top: 5px solid #188BC0;
     padding: 10px;
-    width: 190px;
+    width: 380px;
+    margin-bottom: 10px;
 }
 
 #filtro_ano select {
     width: 125px;		
 }
 
-#botao_relatorio{ 
+#botao_relatorio{
     margin-left:3px;
     position:relative;
     top:-3px;

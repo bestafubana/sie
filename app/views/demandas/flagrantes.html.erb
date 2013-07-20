@@ -23,7 +23,6 @@
 <%= render '/layouts/filtro' %>
 
 <table id="box-table-a" class="advancedtable">
-  <tr>
     <thead>
       <th>Data</th>
       <th>Uf</th>
@@ -31,23 +30,25 @@
       <th>Departamento</th>
       <th>Resposta</th>
       <th>Carga horaria</th>
-      <th colspan="3" style="text-align:center">Opera&ccedil;&otilde;es</th>
+      <th class="noclick"></th>
+      <th class="noclick" style="text-align:center">Opera&ccedil;&otilde;es</th>
+      <th class="noclick"></th>
     </thead>
-  </tr>
-
-<% @demandas.each do |demanda| %>
-  <tr>
-    <td><%= demanda.data.strftime("%m/%d/%Y") %></td>
-    <td><%= demanda.uf %></td>
-    <td><%= demanda.solicitante %></td>
-    <td><%= demanda.departamento %></td>
-    <td><%= demanda.resposta.strftime("%m/%d/%Y") %></td>
-    <td><%= demanda.carga_horaria %></td>
-    <td><%= link_to 'Visualizar', :controller => "demandas", :action => "show_flagrante", :id => demanda.id %></td>
-    <td><%= link_to "Editar", :controller => "demandas", :action => "edit_flagrante", :id => demanda.id %></td>
-    <td><%= link_to 'Excluir', demanda, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+    <tbody>
+    <% @demandas.each do |demanda| %>
+      <tr>
+        <td><%= demanda.data.strftime("%m/%d/%Y") %></td>
+        <td><%= demanda.uf %></td>
+        <td><%= demanda.solicitante %></td>
+        <td><%= demanda.departamento %></td>
+        <td><%= demanda.resposta.strftime("%m/%d/%Y") %></td>
+        <td><%= demanda.carga_horaria %></td>
+        <td><img src="/assets/open.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Visualizar', :controller => "demandas", :action => "show_flagrante", :id => demanda.id %></td>
+        <td><img src="/assets/edit.png" style="vertical-align:middle"/>&nbsp;<%= link_to "Editar", :controller => "demandas", :action => "edit_flagrante", :id => demanda.id %></td>
+        <td><img src="/assets/delete.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Excluir', demanda, :method => :delete, :data => { :confirm => 'Voc tem certeza que desejar excluir esse flagrante?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
 </table>
 
 <br />
