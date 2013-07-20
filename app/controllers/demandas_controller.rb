@@ -196,8 +196,16 @@ class DemandasController < ApplicationController
 
     respond_to do |format|
       if @demanda.save
-        format.html { redirect_to @demanda, :notice => 'Demanda criada com sucesso.' }
-        format.json { render :json => @demanda, :status => :created, :location => @demanda }
+        if @demanda.tipo_demanda == '1' || @demanda.tipo_demanda == 1
+          format.html { render "/demandas/show_consulta", :notice => 'Consulta criada com sucesso.'}
+          format.json { render :json => @demandas, :status => :created, :location => @demanda  }
+        elsif @demanda.tipo_demanda == '2' || @demanda.tipo_demanda == 2
+          format.html { render "/demandas/show", :notice => 'Levantamento criado com sucesso.' }
+          format.json { render :json => @demandas, :status => :created, :location => @demanda  }
+        else
+          format.html { render "/demandas/show_flagrante", :notice => 'Flagrante criada com sucesso.' }
+          format.json { render :json => @demandas, :status => :created, :location => @demanda  }
+        end
       else
         format.html { render :action => "new" }
         format.json { render :json => @demanda.errors, :status => :unprocessable_entity }
@@ -240,4 +248,35 @@ class DemandasController < ApplicationController
       end
     end
   end
+  
+  def destroy_consulta
+    @demanda = Demanda.find(params[:id])
+    @demanda.destroy
+
+    respond_to do |format|
+        format.html { redirect_to "/consultas/list/1" }
+        format.json { render :json => @demandas }
+    end
+  end
+  
+  def destroy_levantamento
+    @demanda = Demanda.find(params[:id])
+    @demanda.destroy
+
+    respond_to do |format|
+        format.html { redirect_to "/consultas/list/2" }
+        format.json { render :json => @demandas }
+    end
+  end
+  
+  def destroy_flagrante
+    @demanda = Demanda.find(params[:id])
+    @demanda.destroy
+
+    respond_to do |format|
+        format.html { redirect_to "/consultas/list/3" }
+        format.json { render :json => @demandas }
+    end
+  end
+  
 end

@@ -2,5 +2,5 @@
 <br>
 <%= render 'form_levantamentos' %>
 
-<%= link_to 'Show', @demanda %> |
+<%= link_to 'Show', :controller => "demandas", :action => "show_levantamento", :id => @demanda.id %> |
 <%= link_to 'Voltar', "/consultas/list/2" %>

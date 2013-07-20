@@ -18,6 +18,9 @@ Sie::Application.routes.draw do
   get "/consultas/edit_consulta/:id" => "demandas#edit_consulta"
   get "/show_levantamento/:id" => "demandas#show_levantamento"
   get "/show_flagrante/:id" => "demandas#show_flagrante"
+  get "/consultas/destroy_consulta/:id" => "demandas#destroy_consulta"
+  get "/levantamentos/destroy_levantamento/:id" => "demandas#destroy_levantamento"
+  get "/flagrantes/destroy_flagrante/:id" => "demandas#destroy_flagrante"
 
   # Relat—rios
   match "/consultas/relatorio/:tipo_demanda/:mes/:ano" => "demandas#relatorio_consulta"

@@ -30,5 +30,5 @@
   <%= @demanda.carga_horaria %>
 </p>
 
-<%= link_to 'Editar', edit_demanda_path(@demanda) %> |
+<%= link_to 'Editar', :controller => "demandas", :action => "edit_levantamento", :id => @demanda.id %> |
 <%= link_to 'Voltar', "/consultas/list/2" %>

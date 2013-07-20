@@ -45,12 +45,19 @@
         <td><%= demanda.carga_horaria %></td>
         <td><img src="/assets/open.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Visualizar', :controller => "demandas", :action => "show_flagrante", :id => demanda.id %></td>
         <td><img src="/assets/edit.png" style="vertical-align:middle"/>&nbsp;<%= link_to "Editar", :controller => "demandas", :action => "edit_flagrante", :id => demanda.id %></td>
-        <td><img src="/assets/delete.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Excluir', demanda, :method => :delete, :data => { :confirm => 'Voc tem certeza que desejar excluir esse flagrante?' } %></td>
+        <td class="excluir"><img src="/assets/delete.png" style="vertical-align:middle"/>&nbsp;<a href="javascript:deleteD('/flagrantes/destroy_flagrante/<%=demanda.id%>')">Excluir</a></td>
       </tr>
     <% end %>
     </tbody>
 </table>
-
+<script>
+    function deleteD(path){
+        if(confirm("Voce tem certeza que desejar excluir esse flagrante?")){
+            window.location = path;
+        }
+    }
+    
+</script>
 <br />
 
 <%= link_to 'Novo Flagrante', "/flagrantes/new" %>
