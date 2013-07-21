@@ -20,17 +20,12 @@
     </div>
     <div class="field">
       <%= f.label :uf %><br />
-      <%= select_tag('demanda[uf]', options_for_select([['Acre', "AC"],
-        ['Alagoas', "AL"], ['Amazonas', "AM"],['Amapá', "AP"],
-        ['Bahia', "BA"], ['Ceará', "CE"],['Distrito Federal', "DF"],
-        ['Espirito Santo', "ES"], ['Goiás', "GO"],['Maranhão', "MA"],
-        ['Minas Gerais', "MG"], ['Mato Grosso do Sul', "MS"],
-        ['Mato Grosso', "MT"],
-        ['Pará', "PA"], ['Pernambuco', "PE"],['Piauí', "PI"],
-        ['Paraná', "PR"], ['Rio de Janeiro', "RJ"],['Rio Grande do Norte', "RN"],
-        ['Rio Grande do Sul', "RS"], ['Rondônia', "RO"],['Roraima', "RR"],
-        ['Santa Catarina', "SC"], ['São Paulo', "SP"], ['Sergipe', "SE"],
-        ['Tocantins', "TO"]
+      <%= select_tag('demanda[uf]', options_for_select([
+        ['Alagoas', "AL"], 
+        ['Bahia', "BA"], ['Ceará', "CE"],['Maranhão', "MA"],
+        ['Pernambuco', "PE"],['Piauí', "PI"], ['Paraíba','PB'],
+        ['Rio Grande do Norte', "RN"],
+        ['Sergipe', "SE"]
         ])) %>
     </div>
     <div class="field">
