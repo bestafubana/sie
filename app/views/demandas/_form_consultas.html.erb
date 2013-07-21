@@ -114,6 +114,13 @@
     <%= f.submit %>
   </div>
 <script>
+  
+  <% if @demanda.data_obito_consultado.nil? %>
+    desabilitaDataObito();
+  <% end %>
+  <% if @demanda.resposta.nil? %>
+    desabilitaResposta();
+  <% end %>  
   $(document).ready(function() {
     $("#file_foto").change(function(){
       $("#foto").remove();

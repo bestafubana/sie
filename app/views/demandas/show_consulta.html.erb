@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 <%= image_tag(@demanda.foto_url, :width => 150) if @demanda.foto.present?%>
 
-<p>
-  <b>Data:</b>
-  <%= @demanda.data %>
-</p>
-
+<% if !@demanda.data.nil? %>
+  <p>
+    <b>Data:</b>
+    <%= @demanda.data %>
+  </p>
+<% end %>
 <p>
   <b>UF</b>
   <%= @demanda.uf %>
@@ -20,12 +21,12 @@
   <b>Departamento:</b>
   <%= @demanda.departamento %>
 </p>
-
-<p>
-  <b>Resposta:</b>
-  <%= @demanda.resposta %>
-</p>
-
+<% if !@demanda.resposta.nil? %>
+  <p>
+    <b>Resposta:</b>
+    <%= @demanda.resposta.strftime("%d/%m/%Y") %>
+  </p>
+<% end %>
 <p>
   <b>Carga hor&aacute;ria:</b>
   <%= @demanda.carga_horaria %>
@@ -40,12 +41,12 @@
   <b>CPF:</b>
   <%= @demanda.cpf_consultado %>
 </p>
-
+<% if !@demanda.data_nasc_consultado.nil? %>
 <p>
   <b>Data Nascimento:</b>
   <%= @demanda.data_nasc_consultado %>
 </p>
-
+<% end %>
 <p>
   <b>T&iacute;tulo de Eleitor:</b>
   <%= @demanda.titulo_eleitor_consultado %>
@@ -55,12 +56,12 @@
   <b>Sexo:</b>
   <%= @demanda.sexo_consultado %>
 </p>
-
-<p>
-  <b>Data do &Oacute;bito:</b>
-  <%= @demanda.data_obito_consultado %>
-</p>
-
+<% if !@demanda.data_obito_consultado.nil? %>
+  <p>
+    <b>Data do &Oacute;bito:</b>
+    <%= @demanda.data_obito_consultado.strftime("%d/%m/%Y") %>
+  </p>
+<% end %>
 <p>
   <b>Unidade Administrativa:</b>
   <%= @demanda.unidade_adm_consultado %>
