@@ -1,7 +1,7 @@
 <script>
     $(document).ready(function() {
         $('a[accesskey|="1"]').parent().addClass("current_page_item");
-        $("#box-table-a").advancedtable({searchField: "#search", loadElement: "#loader", searchCaseSensitive: false, ascImage: "/assets/up.png", descImage: "/assets/down.png"});
+        $("#box-table-a").advancedtable({searchField: "#search", loadElement: "#loader", searchCaseSensitive: false, ascImage: "/assets/up.png", descImage: "/assets/down.png", rowsPerPage: 20});
         $('.noclick').unbind('click');
     });
 </script>
