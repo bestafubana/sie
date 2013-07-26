@@ -108,9 +108,15 @@
   
   <% if @demanda.data_obito_consultado.nil? %>
     desabilitaDataObito();
-  <% end %>
+  <% else %>
+    $('#cbDataObito').prop("checked", true);
+    habilitaDataObito();
+  <% end %> 
   <% if @demanda.resposta.nil? %>
     desabilitaResposta();
+  <% else %>
+    $('#cbResposta').prop("checked", true);
+    habilitaResposta();
   <% end %>  
   $(document).ready(function() {
     $("#file_foto").change(function(){

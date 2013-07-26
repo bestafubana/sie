@@ -220,8 +220,16 @@ class DemandasController < ApplicationController
 
     respond_to do |format|
       if @demanda.update_attributes(params[:demanda])
-        format.html { redirect_to "/consultas/list/1", :notice => 'Demanda atualizada com sucesso.' }
-        format.json { head :no_content }
+        if @demanda.tipo_demanda == '1' || @demanda.tipo_demanda == 1
+          format.html { redirect_to "/consultas/list/1", :notice => 'Consulta atualizada com sucesso.'}
+          format.json { head :no_content }
+        elsif @demanda.tipo_demanda == '2' || @demanda.tipo_demanda == 2
+          format.html { redirect_to "/consultas/list/2", :notice => 'Levantamento atualizado com sucesso.' }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to "/consultas/list/3", :notice => 'Flagrante atualizado com sucesso.' }
+          format.json { head :no_content }
+        end
       else
         format.html { render :action => "edit" }
         format.json { render :json => @demanda.errors, :status => :unprocessable_entity }

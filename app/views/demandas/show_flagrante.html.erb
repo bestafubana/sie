@@ -20,10 +20,12 @@
   <%= @demanda.departamento %>
 </p>
 
-<p>
-  <b>Resposta:</b>
-  <%= @demanda.resposta %>
-</p>
+<% if !@demanda.resposta.nil? %>
+  <p>
+    <b>Resposta:</b>
+    <%= @demanda.resposta.strftime("%d/%m/%Y") %>
+  </p>
+<% end %>
 
 
 <%= link_to 'Editar', :controller => "demandas", :action => "edit_flagrante", :id => @demanda.id %> |

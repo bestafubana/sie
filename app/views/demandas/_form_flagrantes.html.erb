@@ -37,13 +37,50 @@
       <%= f.text_field :departamento %>
     </div>
     <div class="field">
-      <%= f.label :resposta %><br />
-      <%= f.date_select :resposta %>
+      <input type="checkbox" id="cbResposta"> Tem resposta?
+      <div id="divResposta" style="display:none">
+        <%= f.label :resposta %><br />
+        <%= f.date_select :resposta %>
+      </div>  
     </div>
   </div>
   
   <div class="actions">
     <%= f.submit "Salvar"%>
   </div>
-<script>$('a[accesskey|="4"]').parent().addClass("current_page_item");</script>
+  <script>
+  <% if @demanda.resposta.nil? %>
+    desabilitaResposta();
+  <% else %>
+    $('#cbResposta').prop("checked", true);
+    habilitaResposta();
+  <% end %>  
+  $(document).ready(function() {
+    $("#cbResposta").click(function(){
+      if($("#cbResposta").prop("checked")){
+        habilitaResposta();
+      }else{
+        desabilitaResposta();
+      }
+    });
+    
+  });
+  
+  function habilitaResposta(){
+    $("#divResposta").show();
+    $("#demanda_resposta_3i").prop("disabled", false);
+    $("#demanda_resposta_2i").prop("disabled", false);
+    $("#demanda_resposta_1i").prop("disabled", false);
+  }
+  
+  function desabilitaResposta(){
+    $("#divResposta").hide();
+    $("#demanda_resposta_3i").prop("disabled", true);
+    $("#demanda_resposta_2i").prop("disabled", true);
+    $("#demanda_resposta_1i").prop("disabled", true);
+  }
+  
+  $('a[accesskey|="4"]').parent().addClass("current_page_item");
+</script>
+  
 <% end %>

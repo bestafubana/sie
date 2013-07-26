@@ -36,11 +36,15 @@
     <tbody>
     <% @demandas.each do |demanda| %>
       <tr>
-        <td><%= demanda.data.strftime("%m/%d/%Y") %></td>
+        <td><%= demanda.data.strftime("%d/%m/%Y") %></td>
         <td><%= demanda.uf %></td>
         <td><%= demanda.solicitante %></td>
         <td><%= demanda.departamento %></td>
-        <td><%= demanda.resposta.strftime("%m/%d/%Y") %></td>
+        <% if demanda.resposta != nil %>
+            <td><%= demanda.resposta.strftime("%d/%m/%Y") %></td>
+        <% else %>
+            <td>&nbsp;</td>
+        <% end %>
         <td><img src="/assets/open.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Visualizar', :controller => "demandas", :action => "show_levantamento", :id => demanda.id %></td>
         <td><img src="/assets/edit.png" style="vertical-align:middle"/>&nbsp;<%= link_to "Editar", :controller => "demandas", :action => "edit_levantamento", :id => demanda.id %></td>
         <td class="excluir"><img src="/assets/delete.png" style="vertical-align:middle"/>&nbsp;<a href="javascript:deleteD('/levantamentos/destroy_levantamento/<%=demanda.id%>')">Excluir</a></td>
