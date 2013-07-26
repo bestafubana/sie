@@ -27,10 +27,17 @@
     <%= f.label :departamento %><br />
     <%= f.text_field :departamento %>
   </div>
+   <div class="field">
+    <%= f.label :tipo_contato %><br />
+    <%= select_tag('contato[tipo_contato]', options_for_select([
+        ['Cliente', "Cliente"], ['Prestador', "Prestador"]
+        ])) %>
+  </div>
   <div class="field">
     <%= f.label :telefone %><br />
     <%= f.text_field :telefone %>
   </div>
+ 
   <div class="actions">
     <%= f.submit "Salvar"%>
   </div>

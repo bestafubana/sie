@@ -29,7 +29,6 @@
       <th>Solicitante</th>
       <th>Departamento</th>
       <th>Resposta</th>
-      <th>Carga horaria</th>
       <th class="noclick"></th>
       <th class="noclick" style="text-align:center">Opera&ccedil;&otilde;es</th>
       <th class="noclick"></th>
@@ -42,7 +41,6 @@
         <td><%= demanda.solicitante %></td>
         <td><%= demanda.departamento %></td>
         <td><%= demanda.resposta.strftime("%m/%d/%Y") %></td>
-        <td><%= demanda.carga_horaria %></td>
         <td><img src="/assets/open.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Visualizar', :controller => "demandas", :action => "show_levantamento", :id => demanda.id %></td>
         <td><img src="/assets/edit.png" style="vertical-align:middle"/>&nbsp;<%= link_to "Editar", :controller => "demandas", :action => "edit_levantamento", :id => demanda.id %></td>
         <td class="excluir"><img src="/assets/delete.png" style="vertical-align:middle"/>&nbsp;<a href="javascript:deleteD('/levantamentos/destroy_levantamento/<%=demanda.id%>')">Excluir</a></td>

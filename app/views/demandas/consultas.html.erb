@@ -32,7 +32,6 @@
       <th>Solicitante</th>
       <th>Departamento</th>
       <th>Resposta</th>
-      <th>Carga horaria</th>
       <!--<th>Foto</th>-->
       <!--<th>PDF</th>-->
       <th class="noclick"></th>
@@ -52,7 +51,6 @@
         <% else %>
             <td>&nbsp;</td>
         <% end %>   
-        <td><%= demanda.carga_horaria %></td>
         <td class="visualizar"><img src="/assets/open.png" style="vertical-align:middle"/>&nbsp;<%= link_to 'Visualizar', :controller => "demandas", :action => "show", :id => demanda.id %></td>
         <td class="editar"> <img src="/assets/edit.png" style="vertical-align:middle"/>&nbsp;<%= link_to "Editar", :controller => "demandas", :action => "edit_consulta", :id => demanda.id %></td>
         <td class="excluir"><img src="/assets/delete.png" style="vertical-align:middle"/>&nbsp;<a href="javascript:deleteD('/consultas/destroy_consulta/<%=demanda.id%>')">Excluir</a></td>

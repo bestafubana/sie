@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305200500) do
+ActiveRecord::Schema.define(:version => 20130725205000) do
 
   create_table "contatos", :force => true do |t|
     t.string   "nome"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130305200500) do
     t.string   "telefone"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "tipo_contato"
   end
 
   create_table "demandas", :force => true do |t|
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20130305200500) do
     t.string   "endereco_consultado"
     t.string   "observacoes_consultado"
     t.integer  "tipo_demanda"
+    t.string   "avatar"
     t.string   "foto"
   end
 

@@ -16,6 +16,7 @@
         <th>Email</th>
         <th>Empresa</th>
         <th>Departamento</th>
+        <th>Tipo</th>
         <th>Telefone</th>
         <th class="noclick"></th>
         <th class="noclick"></th>
@@ -29,6 +30,7 @@
         <td><%= contato.email %></td>
         <td><%= contato.empresa %></td>
         <td><%= contato.departamento %></td>
+        <td><%= contato.tipo_contato %></td>
         <td><%= contato.telefone %></td>
         <td class="visualizar"><img src="assets/open.png" style="vertical-align:middle"> <%= link_to 'Visualizar', contato %></td>
         <td class="editar"><img src="assets/edit.png" style="vertical-align:middle"><%= link_to 'Editar', edit_contato_path(contato) %></td>
