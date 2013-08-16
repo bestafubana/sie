@@ -1,5 +1,5 @@
 # encoding: utf-8
-class RelatorioConsultado < Prawn::Document
+class RelatorioFlagrante < Prawn::Document
 
   def initialize(demanda, view, request)
     super()
@@ -28,7 +28,7 @@ class RelatorioConsultado < Prawn::Document
       x_position = cursor
       caminho_foto = demanda.foto.to_s.split("\/").last
       image "#{Rails.root}/public/uploads/demanda/foto/#{demanda.id}/#{caminho_foto}", :at => [0,x_position],
-        :width => 320,:height => 450
+        :width => 520,:height => 380
         
       move_down 470
       
@@ -43,10 +43,6 @@ class RelatorioConsultado < Prawn::Document
       move_down 90
       
       informacoes(demanda)
-      
-      move_down 30
-      
-      observacoes(demanda)
       
       move_down 40
       
@@ -76,7 +72,14 @@ class RelatorioConsultado < Prawn::Document
     text "UF: #{demanda.uf}", :size => 11
     text "Solicitante: #{demanda.solicitante}", :size => 11
     text "Empresa: #{demanda.caminho_foto}", :size => 11
-    text "Departamento: #{demanda.departamento}", :size => 11
+    text "Relatório do Caso: #{demanda.observacoes_consultado}", :size => 11
+    text "Autuado: #{demanda.cpf_consultado}", :size => 11
+    text "Local de Autuação: #{demanda.titulo_eleitor_consultado}", :size => 11
+    text "Endereço: #{demanda.nome_mae_consultado}", :size => 11
+    text "Hora: #{demanda.unidade_adm_consultado}", :size => 11
+    text "Vítima: #{demanda.situacao_cadastral_consultado}", :size => 11
+    text "Tipo de Crime: #{demanda.observacoes_consultado}", :size => 11
+    text "Objeto Envolvido na Ocorrência: #{demanda.caminho_pdf}", :size => 11
     
   end
   

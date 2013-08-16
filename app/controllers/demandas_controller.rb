@@ -115,11 +115,12 @@ class DemandasController < ApplicationController
   end
   
   def relatorio_flagrante
+    @demanda = Demanda.find(params[:id])
     
     respond_to do |format|
       format.html { render "demandas/#{params[:id]}" }
       format.pdf do
-        pdf = RelatorioConsultas.new(@demandas, params[:mes], params[:ano], view_context, "Flagrantes")
+        pdf = RelatorioFlagrante.new(@demanda, view_context, request)
         send_data pdf.render, :filename =>
             "relatorio_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
                   :type => "application/pdf", :layout => "application"
@@ -128,11 +129,12 @@ class DemandasController < ApplicationController
   end
   
   def relatorio_levantamento
+    @demanda = Demanda.find(params[:id])
 
     respond_to do |format|
       format.html { render "demandas/#{params[:id]}" }
       format.pdf do
-        pdf = RelatorioConsultas.new(@demandas, params[:mes], params[:ano], view_context, "Levantamentos")
+        pdf = RelatorioLevantamento.new(@demanda, view_context, request)
         send_data pdf.render, :filename =>
             "relatorio_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
                   :type => "application/pdf", :layout => "application"

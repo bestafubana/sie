@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
+<%= image_tag(@demanda.foto_url, :width => 150) if @demanda.foto.present?%>
 
-<p>
-  <b>Data:</b>
-  <%= @demanda.data %>
-</p>
+<% if !@demanda.data.nil? %>
+  <p>
+    <b>Data:</b>
+    <%= @demanda.data %>
+  </p>
+<% end %>
 
 <p>
   <b>Uf:</b>
