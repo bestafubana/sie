@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20130725205000) do
     t.integer  "carga_horaria"
     t.string   "caminho_foto"
     t.string   "caminho_pdf"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.datetime "resposta"
     t.string   "nome_consultado"
     t.string   "cpf_consultado"
@@ -46,8 +46,7 @@ ActiveRecord::Schema.define(:version => 20130725205000) do
     t.string   "endereco_consultado"
     t.string   "observacoes_consultado"
     t.integer  "tipo_demanda"
-    t.string   "avatar"
-    t.string   "foto"
+    t.string   "foto",                          :limit => 500
   end
 
   create_table "status_consulta", :force => true do |t|

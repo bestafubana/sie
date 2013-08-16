@@ -1,7 +1,7 @@
 <%= form_for(@demanda, :html => { :multipart => true }) do |f| %>
   <% if @demanda.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@demanda.errors.count, "error") %> prohibited this demanda from being saved:</h2>
+      <h2><%= pluralize(@demanda.errors.count, "error") %> impediu(ram) a consulta de ser salva:</h2>
 
       <ul>
       <% @demanda.errors.full_messages.each do |msg| %>
@@ -30,6 +30,10 @@
     <div class="field">
       <%= f.label :solicitante %><br />
       <%= f.text_field :solicitante %>
+    </div>
+    <div class="field">
+      <%= f.label :caminho_foto, "Empresa" %><br />
+      <%= f.text_field :caminho_foto %>
     </div>
     <div class="field">
       <%= f.label :departamento %><br />

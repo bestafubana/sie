@@ -16,6 +16,12 @@
 </p>
 
 <p>
+  <b>Empresa:</b>
+  <%= @demanda.caminho_foto %>
+</p>
+
+
+<p>
   <b>Departamento:</b>
   <%= @demanda.departamento %>
 </p>
@@ -26,6 +32,27 @@
     <%= @demanda.resposta.strftime("%d/%m/%Y") %>
   </p>
 <% end %>
+
+<p>
+  <b>Local Visitado:</b>
+  <%= @demanda.cpf_consultado %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @demanda.nome_mae_consultado %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%= @demanda.unidade_adm_consultado %>
+</p>
+
+<p>
+  <b>Hora da Visita:</b>
+  <%= @demanda.situacao_cadastral_consultado %>
+</p>
+
 
 <%= link_to 'Editar', :controller => "demandas", :action => "edit_levantamento", :id => @demanda.id %> |
 <%= link_to 'Voltar', "/consultas/list/2" %>
