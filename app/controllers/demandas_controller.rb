@@ -115,10 +115,9 @@ class DemandasController < ApplicationController
   end
   
   def relatorio_flagrante
-    @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m AND YEAR(data) = :a",
-                             {:td => params[:tipo_demanda], :m => params[:mes], :a => params[:ano]}).group("uf").order("uf ASC")
+    
     respond_to do |format|
-      format.html { render "demandas/demandas_teste" }
+      format.html { render "demandas/#{params[:id]}" }
       format.pdf do
         pdf = RelatorioConsultas.new(@demandas, params[:mes], params[:ano], view_context, "Flagrantes")
         send_data pdf.render, :filename =>
@@ -129,10 +128,9 @@ class DemandasController < ApplicationController
   end
   
   def relatorio_levantamento
-    @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m AND YEAR(data) = :a",
-                             {:td => params[:tipo_demanda], :m => params[:mes], :a => params[:ano]}).group("uf").order("uf ASC")
+
     respond_to do |format|
-      format.html { render "demandas/demandas_teste" }
+      format.html { render "demandas/#{params[:id]}" }
       format.pdf do
         pdf = RelatorioConsultas.new(@demandas, params[:mes], params[:ano], view_context, "Levantamentos")
         send_data pdf.render, :filename =>

@@ -67,7 +67,7 @@ class RelatorioConsultado < Prawn::Document
   def informacoes(demanda)
     font "Courier", :style => :bold
     
-    text "INFORMAÇÕES DO FLAGRANTE", :size => 12
+    text "INFORMAÇÕES DO LEVANTAMENTO", :size => 12
     
     move_down 10
     

@@ -20,7 +20,6 @@
   <%= @demanda.caminho_foto %>
 </p>
 
-
 <p>
   <b>Departamento:</b>
   <%= @demanda.departamento %>
@@ -39,7 +38,7 @@
 </p>
 
 <p>
-  <b>Endereco:</b>
+  <b>Endere&ccedil;o::</b>
   <%= @demanda.nome_mae_consultado %>
 </p>
 
@@ -53,6 +52,6 @@
   <%= @demanda.situacao_cadastral_consultado %>
 </p>
 
-
+<%= link_to 'Gerar Relatorio', :controller => "demandas", :action => "relatorio_levantamento", :id => @demanda.id, :format => "pdf"  %> | 
 <%= link_to 'Editar', :controller => "demandas", :action => "edit_levantamento", :id => @demanda.id %> |
 <%= link_to 'Voltar', "/consultas/list/2" %>

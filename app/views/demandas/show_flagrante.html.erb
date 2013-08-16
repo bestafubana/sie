@@ -16,8 +16,53 @@
 </p>
 
 <p>
+  <b>Empresa:</b>
+  <%= @demanda.caminho_foto %>
+</p>
+
+<p>
   <b>Departamento:</b>
   <%= @demanda.departamento %>
+</p>
+
+<p>
+  <b>Relat&oacute;rio do Caso</b>
+  <%= @demanda.observacoes_consultado %>
+</p>
+
+<p>
+  <b>Autuado:</b>
+  <%= @demanda.cpf_consultado %>
+</p>
+
+<p>
+  <b>Local de Atua&ccedil;&atilde;o:</b>
+  <%= @demanda.titulo_eleitor_consultado %>
+</p>
+
+<p>
+  <b>Endere&ccedil;o:</b>
+  <%= @demanda.nome_mae_consultado %>
+</p>
+
+<p>
+  <b>Hora:</b>
+  <%= @demanda.unidade_adm_consultado %>
+</p>
+
+<p>
+  <b>V&iacute;tima:</b>
+  <%= @demanda.situacao_cadastral_consultado %>
+</p>
+
+<p>
+  <b>Tipo de Crime:</b>
+  <%= @demanda.observacoes_consultado %>
+</p>
+
+<p>
+  <b>Objeto envolvido na ocorr&ecirc;ncia:</b>
+  <%= @demanda.caminho_pdf %>
 </p>
 
 <% if !@demanda.resposta.nil? %>
@@ -27,6 +72,6 @@
   </p>
 <% end %>
 
-
+<%= link_to 'Gerar Relatorio', :controller => "demandas", :action => "relatorio_flagrante", :id => @demanda.id, :format => "pdf"  %> | 
 <%= link_to 'Editar', :controller => "demandas", :action => "edit_flagrante", :id => @demanda.id %> |
 <%= link_to 'Voltar', "/consultas/list/3" %>
