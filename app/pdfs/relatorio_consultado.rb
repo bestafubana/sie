@@ -87,7 +87,7 @@ class RelatorioConsultado < Prawn::Document
     text "Nome: #{demanda.nome_consultado}", :size => 11
     text "CPF: #{demanda.cpf_consultado}   Data Nasc.: #{demanda.data_nasc_consultado.strftime("%d/%m/%Y")}", :size => 11
     text "Mãe: #{demanda.nome_mae_consultado}", :size => 11
-    text "Título de Eleitor: #{demanda.titulo_eleitor_consultado}", :size => 11
+    text "RG: #{demanda.titulo_eleitor_consultado}", :size => 11
     
     if !demanda.data_obito_consultado.nil?
       text "Sexo: #{demanda.sexo_consultado}   Ano de Óbito: #{demanda.data_obito_consultado.year}", :size => 11
@@ -97,6 +97,7 @@ class RelatorioConsultado < Prawn::Document
     
     text "Unidade Administrativa: #{demanda.unidade_adm_consultado}   Situação Cadastral: #{demanda.situacao_cadastral_consultado}", :size => 11
     text "Endereço: #{demanda.endereco_consultado}", :size => 11
+    text "UF: #{demanda.uf}", :size => 11
   end
   
   def rodape
@@ -105,6 +106,7 @@ class RelatorioConsultado < Prawn::Document
     text "SIE  - SISTEMA DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :color => "0A3697", :align => :right, :size => 10
     text "Rua Prof. José Cândido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :color => "0A3697", :align => :right, :size => 10
     text "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
+    text "http://www.sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
   end
   
   def observacoes(demanda)

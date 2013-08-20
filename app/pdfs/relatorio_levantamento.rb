@@ -90,6 +90,7 @@ class RelatorioLevantamento < Prawn::Document
     text "SIE  - SISTEMA DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :color => "0A3697", :align => :right, :size => 10
     text "Rua Prof. José Cândido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :color => "0A3697", :align => :right, :size => 10
     text "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
+    text "http://www.sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
   end
   
   def assinatura
