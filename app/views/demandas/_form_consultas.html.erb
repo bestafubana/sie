@@ -97,7 +97,7 @@
     </div>
     <div class="field">
       <%= f.label :observacoes_consultado, "Observações" %><br />
-      <%= text_area_tag(:observacoes_consultado, "", :size => "24x6") %>
+      <%= f.text_area(:observacoes_consultado, :size => "24x6") %>
     </div>
     <div class="field">
       <%= image_tag(@demanda.foto_url, :width => 150, :id => 'foto') if @demanda.foto.present?%> <br />

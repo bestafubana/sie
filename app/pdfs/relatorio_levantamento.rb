@@ -14,7 +14,7 @@ class RelatorioLevantamento < Prawn::Document
     
     move_down 90
     
-    text "Recife, #{Time.now.strftime("%d de %B de %Y")}", :align => :right
+    text getMesTexto(), :align => :right
     
     move_down 30
     
@@ -99,6 +99,40 @@ class RelatorioLevantamento < Prawn::Document
     text "Atenciosamente,"
     text "Sie - Sistema de Informação Empresarial"
     text "81 3439-6911"
+  end
+
+  def getMesTexto()
+    dia = Time.now.day
+    mes = Time.now.month
+    ano = Time.now.year
+    
+    if(mes == 1)
+      mes =  "Janeiro"
+    elsif(mes == 2)
+      mes =  "Fevereiro"
+    elsif(mes == 3)
+      mes =  "Março"
+    elsif(mes == 4)
+      mes =  "Abril"
+    elsif(mes == 5)
+      mes =  "Maio"
+    elsif(mes == 6)
+      mes =  "Junho"
+    elsif(mes == 7)
+      mes =  "Junho"
+    elsif(mes == 8)
+      mes =  "Agosto"
+    elsif(mes == 9)
+      mes =  "Setembro"
+    elsif(mes == 10)
+      mes =  "Outubro"
+    elsif(mes == 11)
+      mes =  "Novembro"
+    else
+      mes =  "Dezembro"
+    end
+    
+    return "Recife, #{dia} de #{mes} de #{ano}"
   end
 
 end

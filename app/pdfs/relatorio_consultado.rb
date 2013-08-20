@@ -11,10 +11,10 @@ class RelatorioConsultado < Prawn::Document
     x_position = cursor
     image "#{Rails.root}/app/assets/images/logo.png", :at => [0,x_position],
       :width => 100,:height => 45
-    
+      
     move_down 90
     
-    text "Recife, #{Time.now.strftime("%d de %B de %Y")}", :align => :right
+    text getMesTexto(), :align => :right
     
     move_down 30
     
@@ -28,11 +28,6 @@ class RelatorioConsultado < Prawn::Document
 
     begin
       
-      #if !demanda.foto.nil?
-      #  font "Courier", :style => :bold
-      #
-      #  text "Documento Consultado", :size => 12
-      #end
       x_position = cursor
       caminho_foto = demanda.foto.to_s.split("\/").last
       image "#{Rails.root}/public/uploads/demanda/foto/#{demanda.id}/#{caminho_foto}", :at => [0,x_position],
@@ -86,8 +81,8 @@ class RelatorioConsultado < Prawn::Document
     font "Courier", :style => :normal
     text "Nome: #{demanda.nome_consultado}", :size => 11
     text "CPF: #{demanda.cpf_consultado}   Data Nasc.: #{demanda.data_nasc_consultado.strftime("%d/%m/%Y")}", :size => 11
-    text "Mãe: #{demanda.nome_mae_consultado}", :size => 11
     text "RG: #{demanda.titulo_eleitor_consultado}", :size => 11
+    text "Mãe: #{demanda.nome_mae_consultado}", :size => 11
     
     if !demanda.data_obito_consultado.nil?
       text "Sexo: #{demanda.sexo_consultado}   Ano de Óbito: #{demanda.data_obito_consultado.year}", :size => 11
@@ -98,6 +93,9 @@ class RelatorioConsultado < Prawn::Document
     text "Unidade Administrativa: #{demanda.unidade_adm_consultado}   Situação Cadastral: #{demanda.situacao_cadastral_consultado}", :size => 11
     text "Endereço: #{demanda.endereco_consultado}", :size => 11
     text "UF: #{demanda.uf}", :size => 11
+    text "Solicitante: #{demanda.solicitante}", :size => 11
+    text "Departamento: #{demanda.departamento}", :size => 11
+    
   end
   
   def rodape
@@ -126,6 +124,41 @@ class RelatorioConsultado < Prawn::Document
     text "Atenciosamente,"
     text "Sie - Sistema de Informação Empresarial"
     text "81 3439-6911"
+  end
+  
+  
+  def getMesTexto()
+    dia = Time.now.day
+    mes = Time.now.month
+    ano = Time.now.year
+    
+    if(mes == 1)
+      mes =  "Janeiro"
+    elsif(mes == 2)
+      mes =  "Fevereiro"
+    elsif(mes == 3)
+      mes =  "Março"
+    elsif(mes == 4)
+      mes =  "Abril"
+    elsif(mes == 5)
+      mes =  "Maio"
+    elsif(mes == 6)
+      mes =  "Junho"
+    elsif(mes == 7)
+      mes =  "Junho"
+    elsif(mes == 8)
+      mes =  "Agosto"
+    elsif(mes == 9)
+      mes =  "Setembro"
+    elsif(mes == 10)
+      mes =  "Outubro"
+    elsif(mes == 11)
+      mes =  "Novembro"
+    else
+      mes =  "Dezembro"
+    end
+    
+    return "Recife, #{dia} de #{mes} de #{ano}"
   end
 
 end
