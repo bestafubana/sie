@@ -72,7 +72,11 @@ class RelatorioFlagrante < Prawn::Document
     text "UF: #{demanda.uf}", :size => 11
     text "Solicitante: #{demanda.solicitante}", :size => 11
     text "Empresa: #{demanda.caminho_foto}", :size => 11
-    text "Relatório do Caso: #{demanda.observacoes_consultado}", :size => 11
+    
+    if !@demanda.resposta.nil? 
+      text "Resposta: #{demanda.resposta.strftime("%d/%m/%Y")}", :size => 11
+    end
+    
     text "Autuado: #{demanda.cpf_consultado}", :size => 11
     text "Local de Autuação: #{demanda.titulo_eleitor_consultado}", :size => 11
     text "Endereço: #{demanda.nome_mae_consultado}", :size => 11
@@ -80,13 +84,14 @@ class RelatorioFlagrante < Prawn::Document
     text "Vítima: #{demanda.situacao_cadastral_consultado}", :size => 11
     text "Tipo de Crime: #{demanda.observacoes_consultado}", :size => 11
     text "Objeto Envolvido na Ocorrência: #{demanda.caminho_pdf}", :size => 11
+    text "Relatório do Caso: #{demanda.nome_consultado}", :size => 11
     
   end
   
   def rodape
     font "Courier", :style => :normal, :color => "0A3697"
     
-    text "SIE  - SISTEMA DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :color => "0A3697", :align => :right, :size => 10
+    text "SIE  - SERVIÇOS DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :color => "0A3697", :align => :right, :size => 10
     text "Rua Prof. José Cândido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :color => "0A3697", :align => :right, :size => 10
     text "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
     text "http://www.sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
@@ -96,7 +101,7 @@ class RelatorioFlagrante < Prawn::Document
     font "Courier", :style => :bold_italic
     
     text "Atenciosamente,"
-    text "Sie - Sistema de Informação Empresarial"
+    text "Sie - Serviços de Informação Empresarial"
     text "81 3439-6911"
   end
 

@@ -81,13 +81,14 @@ class RelatorioLevantamento < Prawn::Document
     text "Endereço: #{demanda.nome_mae_consultado}", :size => 11
     text "Telefone: #{demanda.unidade_adm_consultado}", :size => 11
     text "Hora da Visita: #{demanda.situacao_cadastral_consultado}", :size => 11
+    text "Relatório do Caso: #{demanda.nome_consultado}", :size => 11
     
   end
   
   def rodape
     font "Courier", :style => :normal, :color => "0A3697"
     
-    text "SIE  - SISTEMA DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :color => "0A3697", :align => :right, :size => 10
+    text "SIE  - SERVIÇOS DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :color => "0A3697", :align => :right, :size => 10
     text "Rua Prof. José Cândido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :color => "0A3697", :align => :right, :size => 10
     text "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
     text "http://www.sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
@@ -97,7 +98,7 @@ class RelatorioLevantamento < Prawn::Document
     font "Courier", :style => :bold_italic
     
     text "Atenciosamente,"
-    text "Sie - Sistema de Informação Empresarial"
+    text "Sie - Serviços de Informação Empresarial"
     text "81 3439-6911"
   end
 
