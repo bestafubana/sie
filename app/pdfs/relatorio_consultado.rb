@@ -122,7 +122,7 @@ class RelatorioConsultado < Prawn::Document
     font "Courier", :style => :bold_italic
     
     text "Atenciosamente,"
-    text "Sie - Sistema de Informação Empresarial"
+    text "Sie - Serviços de Informação Empresarial"
     text "81 3439-6911"
   end
   
