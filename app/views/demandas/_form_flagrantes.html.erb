@@ -80,7 +80,7 @@
       <input type="checkbox" id="cbResposta"> Tem resposta?
       <div id="divResposta" style="display:none">
         <%= f.label :resposta %><br />
-        <%= f.date_select :resposta %>
+        <%= f.date_select :resposta, {:start_year => 1900, :end_year => Date.current.year - 13, :include_blank => true, :default => nil}  %>
       </div>  
     </div>
   </div>
@@ -115,9 +115,9 @@
   
   function desabilitaResposta(){
     $("#divResposta").hide();
-    $("#demanda_resposta_3i").text("1");
-    $("#demanda_resposta_2i").text("1");
-    $("#demanda_resposta_1i").text("1900");
+    $("#demanda_resposta_3i").val("");
+    $("#demanda_resposta_2i").val("");
+    $("#demanda_resposta_1i").val("");
     $("#demanda_resposta_3i").prop("disabled", true);
     $("#demanda_resposta_2i").prop("disabled", true);
     $("#demanda_resposta_1i").prop("disabled", true);
