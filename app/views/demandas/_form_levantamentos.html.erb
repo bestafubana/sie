@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field_group">
-    <h3>Dados da Consulta:</h3>
+    <h3>Dados do Levantamento:</h3>
     <%= f.hidden_field :tipo_demanda, :value => 2 %>
     <div class="field">
       <%= f.label :data %><br />
@@ -103,6 +103,9 @@
   
   function desabilitaResposta(){
     $("#divResposta").hide();
+    $("#demanda_resposta_3i").text("1");
+    $("#demanda_resposta_2i").text("1");
+    $("#demanda_resposta_1i").text("1900");
     $("#demanda_resposta_3i").prop("disabled", true);
     $("#demanda_resposta_2i").prop("disabled", true);
     $("#demanda_resposta_1i").prop("disabled", true);

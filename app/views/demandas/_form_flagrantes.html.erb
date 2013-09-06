@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field_group">
-    <h3>Dados da Consulta:</h3>
+    <h3>Dados do Flagrante:</h3>
     <%= f.hidden_field :tipo_demanda, :value => 3 %>
     <div class="field">
       <%= f.label :data %><br />
@@ -49,7 +49,7 @@
       <%= f.file_field :foto , :id => "file_foto" %>
     </div>
     <div class="field">
-      <%= f.label :cpf_consultado, "Autuado" %><br />
+      <%= f.label :cpf_consultado, "Autuado(s)" %><br />
       <%= f.text_field :cpf_consultado %>
     </div>
     <div class="field">
@@ -65,15 +65,15 @@
       <%= f.text_field :unidade_adm_consultado %>
     </div>
     <div class="field">
-      <%= f.label :situacao_cadastral_consultado, "Vítima" %><br />
+      <%= f.label :situacao_cadastral_consultado, "Vítima(s)" %><br />
       <%= f.text_field :situacao_cadastral_consultado %>
     </div>
     <div class="field">
-      <%= f.label :observacoes_consultado, "Tipo de Crime" %><br />
+      <%= f.label :observacoes_consultado, "Tipo(s) de Crime" %><br />
       <%= f.text_field :observacoes_consultado %>
     </div>
     <div class="field">
-      <%= f.label :caminho_pdf, "Objeto envolvido na ocorrência" %><br />
+      <%= f.label :caminho_pdf, "Objeto(s) envolvido(s) na ocorrência" %><br />
       <%= f.text_field :caminho_pdf %>
     </div>
     <div class="field">
@@ -115,6 +115,9 @@
   
   function desabilitaResposta(){
     $("#divResposta").hide();
+    $("#demanda_resposta_3i").text("1");
+    $("#demanda_resposta_2i").text("1");
+    $("#demanda_resposta_1i").text("1900");
     $("#demanda_resposta_3i").prop("disabled", true);
     $("#demanda_resposta_2i").prop("disabled", true);
     $("#demanda_resposta_1i").prop("disabled", true);
