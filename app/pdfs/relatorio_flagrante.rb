@@ -77,13 +77,13 @@ class RelatorioFlagrante < Prawn::Document
       text "Resposta: #{demanda.resposta.strftime("%d/%m/%Y")}", :size => 11
     end
     
-    text "Autuado: #{demanda.cpf_consultado}", :size => 11
+    text "Autuado(s): #{demanda.cpf_consultado}", :size => 11
     text "Local de Autuação: #{demanda.titulo_eleitor_consultado}", :size => 11
     text "Endereço: #{demanda.nome_mae_consultado}", :size => 11
     text "Hora: #{demanda.unidade_adm_consultado}", :size => 11
-    text "Vítima: #{demanda.situacao_cadastral_consultado}", :size => 11
-    text "Tipo de Crime: #{demanda.observacoes_consultado}", :size => 11
-    text "Objeto Envolvido na Ocorrência: #{demanda.caminho_pdf}", :size => 11
+    text "Vítima(s): #{demanda.situacao_cadastral_consultado}", :size => 11
+    text "Tipo(s) de Crime: #{demanda.observacoes_consultado}", :size => 11
+    text "Objeto(s) Envolvido(s) na Ocorrência: #{demanda.caminho_pdf}", :size => 11
     text "Relatório do Caso: #{demanda.nome_consultado}", :size => 11
     
   end
