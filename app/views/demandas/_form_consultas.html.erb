@@ -43,7 +43,7 @@
       <input type="checkbox" id="cbResposta"> Tem resposta?
       <div id="divResposta" style="display:none">
         <%= f.label :resposta %><br />
-        <%= f.date_select :resposta, {:start_year => 1900, :end_year => Date.current.year - 13, :include_blank => true, :default => nil}  %>
+        <%= f.date_select :resposta, {:start_year => 1900, :end_year => Date.current.year, :include_blank => true, :default => nil}  %>
       </div>  
     </div>
   </div>
