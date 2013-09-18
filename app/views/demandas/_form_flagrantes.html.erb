@@ -20,13 +20,9 @@
     </div>
     <div class="field">
       <%= f.label :uf %><br />
-      <%= select_tag('demanda[uf]', options_for_select([
-        ['Alagoas', "AL"], 
-        ['Bahia', "BA"], ['Ceará', "CE"],['Maranhão', "MA"],
-        ['Pernambuco', "PE"],['Piauí', "PI"], ['Paraíba','PB'],
-        ['Rio Grande do Norte', "RN"],
-        ['Sergipe', "SE"]
-        ])) %>
+      <%= f.select :uf, [['Alagoas', "AL"], ['Bahia', "BA"], ['Ceará', "CE"],
+        ['Maranhão', "MA"], ['Pernambuco', "PE"],['Piauí', "PI"], ['Paraíba','PB'],
+        ['Rio Grande do Norte', "RN"],['Sergipe', "SE"]] %>
     </div>
     <div class="field">
       <%= f.label :solicitante %><br />
@@ -108,9 +104,9 @@
   
   function habilitaResposta(){
     $("#divResposta").show();
-    $("#demanda_resposta_3i").prop("disabled", false);
-    $("#demanda_resposta_2i").prop("disabled", false);
-    $("#demanda_resposta_1i").prop("disabled", false);
+    //$("#demanda_resposta_3i").prop("disabled", false);
+    //$("#demanda_resposta_2i").prop("disabled", false);
+    //$("#demanda_resposta_1i").prop("disabled", false);
   }
   
   function desabilitaResposta(){
@@ -118,9 +114,9 @@
     $("#demanda_resposta_3i").val("");
     $("#demanda_resposta_2i").val("");
     $("#demanda_resposta_1i").val("");
-    $("#demanda_resposta_3i").prop("disabled", true);
-    $("#demanda_resposta_2i").prop("disabled", true);
-    $("#demanda_resposta_1i").prop("disabled", true);
+    //$("#demanda_resposta_3i").prop("disabled", true);
+    //$("#demanda_resposta_2i").prop("disabled", true);
+    //$("#demanda_resposta_1i").prop("disabled", true);
   }
   
   $('a[accesskey|="4"]').parent().addClass("current_page_item");
