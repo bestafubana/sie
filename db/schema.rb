@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725205000) do
+ActiveRecord::Schema.define(:version => 20130919001202) do
 
   create_table "contatos", :force => true do |t|
     t.string   "nome"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20130725205000) do
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
     t.datetime "resposta"
-    t.string   "nome_consultado"
+    t.text     "nome_consultado"
     t.string   "cpf_consultado"
     t.datetime "data_nasc_consultado"
     t.string   "nome_mae_consultado"
