@@ -36,6 +36,12 @@ class RelatorioConsultas < Prawn::Document
       text "Periodo sem consultas",:size => 18, :align => :center
     end
     
+    font "Courier", :style => :normal, :color => "0A3697"
+    
+    text_box "SIE  - SISTEMA DE INFORMACAO EMPRESARIAL LTDA-ME", :at => [0,40], :size => 10, :color => "0A3697"
+    text_box "Rua Prof. Jose Candido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :at => [0,30], :size => 10, :color => "0A3697"
+    text_box "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :at => [0,20], :size => 10, :color => "0A3697"
+    text_box "http://www.sieservicos.com.br", :at => [0,10], :size => 10, :color => "0A3697"
     
   end
 

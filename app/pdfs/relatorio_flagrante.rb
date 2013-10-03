@@ -91,10 +91,10 @@ class RelatorioFlagrante < Prawn::Document
   def rodape
     font "Courier", :style => :normal, :color => "0A3697"
     
-    text "SIE  - SERVIÇOS DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :color => "0A3697", :align => :right, :size => 10
-    text "Rua Prof. José Cândido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :color => "0A3697", :align => :right, :size => 10
-    text "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
-    text "http://www.sieservicos.com.br", :color => "0A3697", :align => :right, :size => 10
+    text_box "SIE  - SISTEMA DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :at => [0,40], :size => 10, :color => "0A3697"
+    text_box "Rua Prof. José Cândido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :at => [0,30], :size => 10, :color => "0A3697"
+    text_box "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :at => [0,20], :size => 10, :color => "0A3697"
+    text_box "http://www.sieservicos.com.br", :at => [0,10], :size => 10, :color => "0A3697"
   end
   
   def assinatura
