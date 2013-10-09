@@ -63,7 +63,7 @@ class RelatorioFlagrante < Prawn::Document
   def informacoes(demanda)
     font "Courier", :style => :bold
     
-    text "INFORMAÇÕES DO FLAGRANTE", :size => 12
+    text "INFORMAÇÕES DO AUTUADO/INDICIADO", :size => 12
     
     move_down 10
     
@@ -78,7 +78,7 @@ class RelatorioFlagrante < Prawn::Document
     end
     
     text "Autuado(s): #{demanda.cpf_consultado}", :size => 11
-    text "Local de Autuação: #{demanda.titulo_eleitor_consultado}", :size => 11
+    text "Local de Autuação/indiciamento: #{demanda.titulo_eleitor_consultado}", :size => 11
     text "Endereço: #{demanda.nome_mae_consultado}", :size => 11
     text "Hora: #{demanda.unidade_adm_consultado}", :size => 11
     text "Vítima(s): #{demanda.situacao_cadastral_consultado}", :size => 11
@@ -91,7 +91,7 @@ class RelatorioFlagrante < Prawn::Document
   def rodape
     font "Courier", :style => :normal, :color => "0A3697"
     
-    text_box "SIE  - SISTEMA DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :at => [0,40], :size => 10, :color => "0A3697"
+    text_box "SIE  - SERVIÇOS DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :at => [0,40], :size => 10, :color => "0A3697"
     text_box "Rua Prof. José Cândido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :at => [0,30], :size => 10, :color => "0A3697"
     text_box "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :at => [0,20], :size => 10, :color => "0A3697"
     text_box "http://www.sieservicos.com.br", :at => [0,10], :size => 10, :color => "0A3697"

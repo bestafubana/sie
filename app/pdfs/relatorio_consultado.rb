@@ -18,7 +18,7 @@ class RelatorioConsultado < Prawn::Document
     
     move_down 30
     
-    text "Consulta nº #{demanda.id}/#{Time.now.year}", :align => :left, :size => 11
+    #text "Consulta nº #{demanda.id}/#{Time.now.year}", :align => :left, :size => 11
     
     if !demanda.data.nil?
       text "Data: #{demanda.data.strftime("%d/%m/%Y")}", :size => 11
@@ -113,7 +113,7 @@ class RelatorioConsultado < Prawn::Document
   def rodape
     font "Courier", :style => :normal, :color => "0A3697"
     
-    text_box "SIE  - SISTEMA DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :at => [0,40], :size => 10, :color => "0A3697"
+    text_box "SIE  - SERVIÇOS DE INFORMAÇÃO EMPRESARIAL LTDA-ME", :at => [0,40], :size => 10, :color => "0A3697"
     text_box "Rua Prof. José Cândido Pessoa, 157 - Bairro Novo - Olinda-PE - CEP. 53.030-020", :at => [0,30], :size => 10, :color => "0A3697"
     text_box "Tel. (81) 3439.6911 / 8605.2191 - E-mail: sie@sieservicos.com.br", :at => [0,20], :size => 10, :color => "0A3697"
     text_box "http://www.sieservicos.com.br", :at => [0,10], :size => 10, :color => "0A3697"
