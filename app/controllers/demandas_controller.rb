@@ -100,13 +100,27 @@ class DemandasController < ApplicationController
     end   
   end
   
-  def relatorio_consulta
+  def relatorio_consultas
     @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m AND YEAR(data) = :a",
                              {:td => params[:tipo_demanda], :m => params[:mes], :a => params[:ano]}).group("uf").order("uf ASC")
     respond_to do |format|
       format.html { render "demandas/demandas_teste" }
       format.pdf do
         pdf = RelatorioConsultas.new(@demandas, params[:mes], params[:ano], view_context, "Consultas")
+        send_data pdf.render, :filename =>
+            "relatorio_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
+                  :type => "application/pdf", :layout => "application"
+      end
+    end   
+  end
+  
+  def relatorio_flagrantes
+    @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m AND YEAR(data) = :a",
+                             {:td => params[:tipo_demanda], :m => params[:mes], :a => params[:ano]}).group("uf").order("uf ASC")
+    respond_to do |format|
+      format.html { render "demandas/demandas_teste" }
+      format.pdf do
+        pdf = RelatorioConsultas.new(@demandas, params[:mes], params[:ano], view_context, "Flagrantes")
         send_data pdf.render, :filename =>
             "relatorio_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
                   :type => "application/pdf", :layout => "application"
@@ -121,6 +135,20 @@ class DemandasController < ApplicationController
       format.html { render "demandas/#{params[:id]}" }
       format.pdf do
         pdf = RelatorioFlagrante.new(@demanda, view_context, request)
+        send_data pdf.render, :filename =>
+            "relatorio_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
+                  :type => "application/pdf", :layout => "application"
+      end
+    end   
+  end
+  
+  def relatorio_levantamentos
+    @demandas = Demanda.select("data, uf, COUNT(uf) as count").where("tipo_demanda = :td AND MONTH(data) = :m AND YEAR(data) = :a",
+                             {:td => params[:tipo_demanda], :m => params[:mes], :a => params[:ano]}).group("uf").order("uf ASC")
+    respond_to do |format|
+      format.html { render "demandas/demandas_teste" }
+      format.pdf do
+        pdf = RelatorioConsultas.new(@demandas, params[:mes], params[:ano], view_context, "Levantamentos")
         send_data pdf.render, :filename =>
             "relatorio_#{Time.now.strftime("%d-%m-%Y %H:%M:%S")}.pdf",
                   :type => "application/pdf", :layout => "application"

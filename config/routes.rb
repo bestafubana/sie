@@ -23,13 +23,13 @@ Sie::Application.routes.draw do
   get "/flagrantes/destroy_flagrante/:id" => "demandas#destroy_flagrante"
 
   # Relat—rios
-  match "/consultas/relatorio/:tipo_demanda/:mes/:ano" => "demandas#relatorio_consulta"
+  match "/consultas/relatorio/:tipo_demanda/:mes/:ano" => "demandas#relatorio_consultas"
+  match "/levantamentos/relatorio/:tipo_demanda/:mes/:ano" => "demandas#relatorio_levantamentos"
+  match "/flagrantes/relatorio/:tipo_demanda/:mes/:ano" => "demandas#relatorio_flagrantes"
   
   match "/consultas/relatorio_consultado/:id" => "demandas#relatorio_consultado"
-  
-  match "/consultas/relatorio_flagrante/:id" => "demandas#relatorio_flagrante"
-  
-  match "/consultas/relatorio_levantamento/:id" => "demandas#relatorio_levantamento"
+  match "/flagrantes/relatorio_flagrante/:id" => "demandas#relatorio_flagrante"
+  match "/levantamentos/relatorio_levantamento/:id" => "demandas#relatorio_levantamento"
 
   resources :usuarios
 
